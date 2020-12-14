@@ -6,8 +6,132 @@ set ngroktoken="СЮДА ВАШ ТОКЕН"
 
 
 ::Сам скрипт для батника (если так можно назвать)
-:start
 set way="Не указан"
+if exist resources\versions\1.16.1.jar (
+echo Проверка [ОК]
+) ELSE (
+color 4F
+echo Проверка [FAIL]
+title ERROR!!! Шо делат? :O
+echo Запуск невозможен!
+echo Замечено, что вы не польностью разорхивировали
+echo Архив. Перетащите полностью все файлы, чтобы можно было включить
+pause >nul
+exit)
+if exist resources\versions\1.15.jar (
+echo Проверка [ОК]
+) ELSE (
+color 4F
+echo Проверка [FAIL]
+title ERROR!!! Шо делат? :O
+echo Запуск невозможен!
+echo Замечено, что вы не польностью разорхивировали
+echo Архив. Перетащите полностью все файлы, чтобы можно было включить
+pause >nul
+exit)
+if exist resources\versions\1.14.jar (
+echo Проверка [ОК]
+) ELSE (
+echo Проверка [FAIL]
+color 4F
+title ERROR!!! Шо делат? :O
+echo Запуск невозможен!
+echo Замечено, что вы не польностью разорхивировали
+echo Архив. Перетащите полностью все файлы, чтобы можно было включить
+pause >nul
+exit)
+if exist resources\versions\1.13.jar (
+echo Проверка [ОК]
+) ELSE (
+color 4F
+echo Проверка [FAIL]
+title ERROR!!! Шо делат? :O
+echo Запуск невозможен!
+echo Замечено, что вы не польностью разорхивировали
+echo Архив. Перетащите полностью все файлы, чтобы можно было включить
+pause >nul
+exit)
+if exist resources\versions\1.12.jar (
+echo Проверка [ОК]
+) ELSE (
+color 4F
+echo Проверка [FAIL]
+title ERROR!!! Шо делат? :O
+echo Запуск невозможен!
+echo Замечено, что вы не польностью разорхивировали
+echo Архив. Перетащите полностью все файлы, чтобы можно было включить
+pause >nul
+exit)
+if exist resources\versions\1.11.jar (
+echo Проверка [ОК]
+) ELSE (
+color 4F
+echo Проверка [FAIL]
+title ERROR!!! Шо делат? :O
+echo Запуск невозможен!
+echo Замечено, что вы не польностью разорхивировали
+echo Архив. Перетащите полностью все файлы, чтобы можно было включить
+pause >nul
+exit)
+if exist resources\versions\1.9.2.jar (
+echo Проверка [ОК]
+) ELSE (
+color 4F
+echo Проверка [FAIL]
+title ERROR!!! Шо делат? :O
+echo Запуск невозможен!
+echo Замечено, что вы не польностью разорхивировали
+echo Архив. Перетащите полностью все файлы, чтобы можно было включить
+pause >nul
+exit)
+if exist resources\versions\1.9.jar (
+echo Проверка [ОК]
+) ELSE (
+color 4F
+echo Проверка [FAIL]
+title ERROR!!! Шо делат? :O
+echo Запуск невозможен!
+echo Замечено, что вы не польностью разорхивировали
+echo Архив. Перетащите полностью все файлы, чтобы можно было включить
+pause >nul
+exit)
+if exist resources\versions\1.8.9.jar (
+echo Проверка [ОК]
+) ELSE (
+color 4F
+echo Проверка [FAIL]
+title ERROR!!! Шо делат? :O
+echo Запуск невозможен!
+echo Замечено, что вы не польностью разорхивировали
+echo Архив. Перетащите полностью все файлы, чтобы можно было включить
+pause >nul
+exit)
+if exist resources\versions\1.8.1.jar (
+echo Проверка [ОК]
+) ELSE (
+color 4F
+echo Проверка [FAIL]
+title ERROR!!! Шо делат? :O
+echo Запуск невозможен!
+echo Замечено, что вы не польностью разорхивировали
+echo Архив. Перетащите полностью все файлы, чтобы можно было включить
+pause >nul
+exit)
+color a
+echo Проверка файлов завершена!
+timeout /t 1 >nul
+echo Проверка лицензии...
+timeout /t 1 >nul
+if exist resources\UeNYVBQ_decinUHE.sll (
+goto start
+) ELSE (
+color 4F
+title ERROR!!! Шо делат? :O
+echo Программа не лицензирована!
+echo Убедитесь, что вы скачали с нужного источника!
+pause >nul
+exit)
+:start
 title SLauncher - By ZuVEnO 1.1
 set limit=0
 color 0F
@@ -50,7 +174,7 @@ goto start
 cls
 echo Проверяем на наличие модуля...
 timeout /t 1 >nul
-if exist modules\ngrok.exe goto ngrok
+if exist ngrok.exe goto ngrok
 color 4F
 echo Модуль NgRok не установлен!
 echo Пожалуйста скачайте его на сайте ngrok.com
@@ -66,7 +190,6 @@ echo Если вы это сделали тогда укажите порт
 set /p ngrokport=вашего сервера или мира: 
 cls
 echo Регистрируем ngrok...
-cd modules
 timeout /t 1 >nul
 if %ngroktoken%== "СЮДА ВАШ ТОКЕН" (
 color 4F
@@ -322,7 +445,7 @@ java -Xincgc -Xmx%Limit%M -jar "%core%.jar"
 color 4F
 echo.
 echo 		СЕРВЕР ОСТАНОВЛЕН!!!
-echo  Нажмите, чтобы вернуться к настройке.
+echo  Нажмите, чтобы закрыть программу.
 title SLauncher - Server Stopped!!!
 pause >nul
-goto servera
+exit
