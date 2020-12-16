@@ -13,14 +13,14 @@ goto lang
 :langru
 :: ПРОШЛО
 set ngrokregsuccess=NgRok зарегистрирован!
-set createduccess=Сервер создан!
-set createduccess1=Проверьте свой рабочий стол.
-set createduccess2=Нажмите любую клавишу, чтобы перейти в главное меню.
+set createsuccess=Сервер создан!
+set createsuccess1=Проверьте свой рабочий стол.
+set createsuccess2=Нажмите любую клавишу, чтобы перейти в главное меню.
 set checksuccess=Проверка файла завершена!
 :: ОШИБКИ
 set errortitle=Ааа! Ошибка STOP-000000000000
 set errorcheck=ERROR: недостаточно ресурсов
-set errorcheck1=Пожалуйста, скачайте ещё раз SLauncher.exe
+set errorcheck1=Пожалуйста, скачайте ещё раз CMLauncher.exe
 ::ПО УМОЛЧАНИЮ
 set serverstopped1=Нажмите, чтобы закрыть.
 set serverstopped=СЕРВЕР ОСТАНОВЛЕН!!!
@@ -35,9 +35,9 @@ set russianletters=echo (Русские буквы не работают!!!)
 set start_msg=Вы выбрали запуск сервера.
 set start_way=Укажите путь к ядру сервера (БЕЗ ПРОБЕЛОВ!!!): 
 set create_callcore_msg=Как бы вы хотели назвать ядро сервера?
-set createdtep1=Создание папки...
-set createdtep2=Перемещение ядра сервера...
-set createdtep3=Добавление необходимых дополнений...
+set createstep1=Создание папки...
+set createstep2=Перемещение ядра сервера...
+set createstep3=Добавление необходимых дополнений...
 set settings=Атрибуты:
 set versionsavil=Доступные версии: 
 set versionsel=Выбрать версию minecraft для сервера: 
@@ -57,7 +57,7 @@ set ngrokreg2=Ngrok токен:
 set ngrokregcheck=Проверка регистрации...
 set ngrokmsg_port=Введите порт вашего сервера или мира:
 set mainmenu_select=Введите команду: 
-set mainmenu_title=Добро пожаловать в SLauncher.
+set mainmenu_title=Добро пожаловать в CMLauncher.
 set mainmenu_info=С помощью этой пусковой установки вы можете создавать
 set mainmenu_info1=сервер или запустите его, не заморачиваясь!
 set mainmenu_create=Создать сервер.
@@ -66,6 +66,7 @@ set mainmenu_donate=Пожертвовать на дошик.
 set mainmenu_cmd_info=Проверить изменения.
 set mainmenu_ngrok=Запустить NgRok.
 set create_msg=Вы выбрали создание нового сервера.
+set lang=ru
 goto check
 :langen
 ::SUCCESS
@@ -77,7 +78,7 @@ set checksuccess=File check finished!
 ::ERRORS
 set errortitle=Oh Shit!
 set errorcheck=ERROR: Not enough resources
-set errorcheck1=Re-download SLauncher.exe
+set errorcheck1=Re-download CMLauncher.exe
 set errorngrok=ERROR: NgRok is not registered!
 set errorngrok1=Please enter your authtoken in the ngrok.yml
 ::DEFAULT
@@ -119,7 +120,7 @@ set ngrokreg2=Ngrok Authtoken:
 set ngrokregcheck=Checking register...
 set ngrokmsg_port=Enter the port of your server or world: 
 set mainmenu_select=Enter command: 
-set mainmenu_title=Welcome to SLauncher.
+set mainmenu_title=Welcome to CMLauncher.
 set mainmenu_info=With this launcher you can create
 set mainmenu_info1=a server or run it without bothering!
 set mainmenu_create=Create server.
@@ -129,6 +130,7 @@ set mainmenu_info=Check changes.
 set mainmenu_ngrok=Start NgRok.
 set mainmenu_cmd_info=Check changes.
 set create_msg=You have chosen to create a new server.
+set lang=en
 goto check
 
 
@@ -236,11 +238,31 @@ echo %errorcheck%
 echo %errorcheck1%
 pause >nul
 exit)
+if exist resources\configs (
+echo %checkmsg% [ОК]
+) ELSE (
+color 4F
+echo %checkmsg% [FAIL]
+title %errortitle%
+echo %errorcheck%
+echo %errorcheck1%
+pause >nul
+exit)
+if exist resources\plugins (
+echo %checkmsg% [ОК]
+) ELSE (
+color 4F
+echo %checkmsg% [FAIL]
+title %errortitle%
+echo %errorcheck%
+echo %errorcheck1%
+pause >nul
+exit)
 color a
 echo %checksuccess%
 timeout /t 1 >nul
 :start
-title SLauncher - By ZuVEnO 1.1
+title CMLauncher - By ZuVEnO 1.1
 set limit=0
 color 0F
 cls
@@ -316,7 +338,7 @@ ngrok tcp %ngrokport%
 cd ..
 goto start
 :new
-title SLauncher - By ZuVEnO 1.0 MODE: Create server
+title CMLauncher - By ZuVEnO 1.1 MODE: Create server
 cls
 echo %create_msg%
 echo.
@@ -377,6 +399,12 @@ echo %createstep2%
 copy resources\versions\%ver%.jar "%newservfolder%\ServerProjects\%dir%\"
 rename "%newservfolder%\ServerProjects\%dir%\%ver%.jar" "%callcore%.jar"
 echo %createstep3%
+md "%newservfolder%\ServerProjects\%dir%\plugins\Essentials\"
+md "%newservfolder%\ServerProjects\%dir%\plugins\AutoMessage\"
+copy resources\configs\Essentials\%lang%.yml "%newservfolder%\ServerProjects\%dir%\plugins\Essentials\"
+copy resources\configs\AutoMessage\%lang%.yml "%newservfolder%\ServerProjects\%dir%\plugins\AutoMessage\"
+rename "%newservfolder%\ServerProjects\%dir%\plugins\AutoMessage\%lang%.yml" config.yml
+rename "%newservfolder%\ServerProjects\%dir%\plugins\Essentials\%lang%.yml" config.yml
 copy resources\eula.txt "%newservfolder%\ServerProjects\%dir%\"
 copy resources\plugins\* "%newservfolder%\ServerProjects\%dir%\plugins\"
 copy resources\server.properties "%newservfolder%\ServerProjects\%dir%\"
@@ -390,7 +418,7 @@ pause >nul
 goto start
 :select
 cls
-title SLauncher - By ZuVEnO 1.1 MODE: Select server
+title CMLauncher - By ZuVEnO 1.1 MODE: Select server
 echo %start_msg%
 echo %everymsg%
 echo %limitsetmsg%
@@ -398,7 +426,7 @@ echo %limitsetmsg1%
 set /p limit=%limitsetmsg2%
 goto way
 :way
-title SLauncher - By ZuVEnO 1.1 MODE: Select server
+title CMLauncher - By ZuVEnO 1.1 MODE: Select server
 cls
 color 0F
 echo %settings%
@@ -430,7 +458,7 @@ echo
 pause >nul
 goto way
 :servera
-title SLauncher - By ZuVEnO 1.1 MODE: Select server
+title CMLauncher - By ZuVEnO 1.1 MODE: Select server
 cls
 color 0F
 echo %settings%
@@ -452,12 +480,12 @@ goto servera
 :servstart
 cls
 echo %serverstarting%
-title SLauncher - Server Started
+title CMLauncher - Server Started
 java -Xincgc -Xmx%Limit%M -jar "%core%.jar"
 color 4F
 echo.
 echo 		%serverstopped%
 echo  %serverstopped1%
-title SLauncher - Server Stopped!!!
+title CMLauncher - Server Stopped!!!
 pause >nul
 exit
