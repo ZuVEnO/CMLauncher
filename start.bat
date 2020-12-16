@@ -136,16 +136,6 @@ goto check
 :check
 title Check modules...
 set way=Не указан
-if exist ngrok.yml (
-echo %checkmsg% [ОК]
-) ELSE (
-color 4F
-echo %checkmsg% [FAIL]
-title %errortitle%
-echo %errorcheck%
-echo %errorcheck1%
-pause >nul
-exit)
 if exist resources\versions\1.16.1.jar (
 echo %checkmsg% [ОК]
 ) ELSE (
