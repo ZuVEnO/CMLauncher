@@ -1,154 +1,272 @@
 @echo off
-:: Тут настройки модуля.
+:lang
+title Select lang.
+echo Select lang \ Выберите язык
+echo [1] - Русский
+echo [2] - English
+set /p lang=- 
+if %lang%== 1 goto langru
+if %lang%== 2 goto langen
+goto lang
 
-set ngroktoken="СЮДА ВАШ ТОКЕН"
 
+:langru
+:: ПРОШЛО
+set ngrokregsuccess=NgRok зарегистрирован!
+set createduccess=Сервер создан!
+set createduccess1=Проверьте свой рабочий стол.
+set createduccess2=Нажмите любую клавишу, чтобы перейти в главное меню.
+set checksuccess=Проверка файла завершена!
+:: ОШИБКИ
+set errortitle=Ааа! Ошибка STOP-000000000000
+set errorcheck=ERROR: недостаточно ресурсов
+set errorcheck1=Пожалуйста, скачайте ещё раз SLauncher.exe
+::ПО УМОЛЧАНИЮ
+set serverstopped1=Нажмите, чтобы закрыть.
+set serverstopped=СЕРВЕР ОСТАНОВЛЕН!!!
+set serverstarting=Сервер запустится через минту...
+set errorcore=ERROR: Данного ядра нет!
+set errorcore1=Пожалуйста измените название ядра.
+set namecore=Название ядра (без .jar)
+set errorway=ERROR: Данной папки нет!
+set errorway1=Пожалуйста смените путь к серверу.
+set memorylimit=Ограничение памяти:
+set russianletters=echo (Русские буквы не работают!!!)
+set start_msg=Вы выбрали запуск сервера.
+set start_way=Укажите путь к ядру сервера (БЕЗ ПРОБЕЛОВ!!!): 
+set create_callcore_msg=Как бы вы хотели назвать ядро ??сервера?
+set createdtep1=Создание папки...
+set createdtep2=Перемещение ядра сервера...
+set createdtep3=Добавление необходимых дополнений...
+set settings=Атрибуты:
+set versionsavil=Доступные версии: 
+set versionsel=Выбрать версию minecraft для сервера: 
+set имя папки=Имя папки:
+set create_msg1=Как называется ваша папка?
+set desktop=Рабочий стол
+set waydesktop=Если сервер на рабочем столе - desktop
+set everymsg=Вы хотите вернуться в главное меню - main
+set everymsg1=Вы хотите отредактировать - back
+set selectedver=Версия:
+set checkmsg=Проверка...
+set ngrok_msg=Вы выбрали NgRok.
+set ngrok_msg1=Вы можете поделиться IP Minecraft после tcp://[ВАШ IP]
+set ngrokreg=NgRok не зарегистрирован!
+set ngrokreg1=Пожалуйста, перейдите на ngrok.com, зарегистрируйтесь, скопируйте authtoken и вставьте в строку.
+set ngrokreg2=Ngrok токен: 
+set ngrokregcheck=Проверка регистрации...
+set ngrokmsg_port=Введите порт вашего сервера или мира:
+set mainmenu_select=Введите команду: 
+set mainmenu_title=Добро пожаловать в SLauncher.
+set mainmenu_info=С помощью этой пусковой установки вы можете создавать
+set mainmenu_info1=сервер или запустите его, не заморачиваясь!
+set mainmenu_create=Создать сервер.
+set mainmenu_start=Запустить сервер.
+set mainmenu_donate=Пожертвовать на дошик.
+set mainmenu_cmd_info=Проверить изменения.
+set mainmenu_ngrok=Запустить NgRok.
+set create_msg=Вы выбрали создание нового сервера.
+goto check
+:langen
+::SUCCESS
+set ngrokregsuccess=NgRok has been registered!
+set createsuccess=		Server has been created!
+set createsuccess1=		Check your desktop.
+set createsuccess2=	 Press any key to go to main menu.
+set checksuccess=File check finished!
+::ERRORS
+set errortitle=Oh Shit!
+set errorcheck=ERROR: Not enough resources
+set errorcheck1=Re-download SLauncher.exe
+set errorngrok=ERROR: NgRok is not registered!
+set errorngrok1=Please enter your authtoken in the ngrok.yml
+::DEFAULT
+set serverstopped1=Click to close the program
+set serverstopped=SERVER STOPPED!!!
+set serverstarting=Server starts up in one minute
+set errorcore=ERROR: Server Core Doesn't Respond.
+set errorcore1=Please, change name of server core.
+set namecore=Name of server core (without .jar)
+set errorway=ERROR: The folder doesn't respond.
+set errorway1=Please change folder.
+set limitsetmsg1=Before starting, please specify the memory
+set limitsetmsg2=limit (Required MB): 
+set memorylimit=Memory Limit:
+set limitsetmsg=If you suddenly put the letters, the server does not start!
+set start_msg=You have chosen to start the server.
+set start_way=Specify the path to the server core (NO SPACES!!!): 
+set create_callcore_msg=How would you like to name the Server core?
+set createstep1=Creating folder...
+set createstep2=Moving server core...
+set createstep3=Adding required add-ons...
+set settings=Attributes:
+set versionsavil=Versions Avilable:
+set versionsel=Select minecraft-version for server: 
+set foldername=Folder name:
+set create_msg1=What is the name of your folder?
+set russianletters=echo.
+set desktop=Desktop
+set waydesktop=If the server is on the desktop - desktop
+set everymsg=Do you want to return to the main menu - main
+set everymsg1=Do you want to edit - back
+set selectedver=Version:
+set checkmsg=Checking...
+set ngrok_msg=You selected NgRok.
+set ngrok_msg1=You can share Minecraft IP after tcp://[YOUR IP]
+set ngrokreg=NgRok is not registered!
+set ngrokreg1=Please go to ngrok.com, sign up, copy authtoken and paste token here.
+set ngrokreg2=Ngrok Authtoken: 
+set ngrokregcheck=Checking register...
+set ngrokmsg_port=Enter the port of your server or world: 
+set mainmenu_select=Enter command: 
+set mainmenu_title=Welcome to SLauncher.
+set mainmenu_info=With this launcher you can create
+set mainmenu_info1=a server or run it without bothering!
+set mainmenu_create=Create server.
+set mainmenu_start=Start server.
+set mainmenu_donate=Donate.
+set mainmenu_info=Check changes.
+set mainmenu_ngrok=Start NgRok.
+set mainmenu_cmd_info=Check changes.
+set create_msg=You have chosen to create a new server.
+goto check
 
 
 ::Сам скрипт для батника (если так можно назвать)
-set way="Не указан"
-if exist resources\versions\1.16.1.jar (
-echo Проверка [ОК]
+:check
+title Check modules...
+set way=Не указан
+if exist ngrok.yml (
+echo %checkmsg% [ОК]
 ) ELSE (
 color 4F
-echo Проверка [FAIL]
-title ERROR!!! Шо делат? :O
-echo Запуск невозможен!
-echo Замечено, что вы не польностью разорхивировали
-echo Архив. Перетащите полностью все файлы, чтобы можно было включить
+echo %checkmsg% [FAIL]
+title %errortitle%
+echo %errorcheck%
+echo %errorcheck1%
+pause >nul
+exit)
+if exist resources\versions\1.16.1.jar (
+echo %checkmsg% [ОК]
+) ELSE (
+color 4F
+echo %checkmsg% [FAIL]
+title %errortitle%
+echo %errorcheck%
+echo %errorcheck1%
 pause >nul
 exit)
 if exist resources\versions\1.15.jar (
-echo Проверка [ОК]
+echo %checkmsg% [ОК]
 ) ELSE (
 color 4F
-echo Проверка [FAIL]
-title ERROR!!! Шо делат? :O
-echo Запуск невозможен!
-echo Замечено, что вы не польностью разорхивировали
-echo Архив. Перетащите полностью все файлы, чтобы можно было включить
+echo %checkmsg% [FAIL]
+title %errortitle%
+echo %errorcheck%
+echo %errorcheck1%
 pause >nul
 exit)
 if exist resources\versions\1.14.jar (
-echo Проверка [ОК]
+echo %checkmsg% [ОК]
 ) ELSE (
-echo Проверка [FAIL]
+echo %checkmsg% [FAIL]
 color 4F
-title ERROR!!! Шо делат? :O
-echo Запуск невозможен!
-echo Замечено, что вы не польностью разорхивировали
-echo Архив. Перетащите полностью все файлы, чтобы можно было включить
+title %errortitle%
+echo %errorcheck%
+echo %errorcheck1%
 pause >nul
 exit)
 if exist resources\versions\1.13.jar (
-echo Проверка [ОК]
+echo %checkmsg% [ОК]
 ) ELSE (
 color 4F
-echo Проверка [FAIL]
-title ERROR!!! Шо делат? :O
-echo Запуск невозможен!
-echo Замечено, что вы не польностью разорхивировали
-echo Архив. Перетащите полностью все файлы, чтобы можно было включить
+echo %checkmsg% [FAIL]
+title %errortitle%
+echo %errorcheck%
+echo %errorcheck1%
 pause >nul
 exit)
 if exist resources\versions\1.12.jar (
-echo Проверка [ОК]
+echo %checkmsg% [ОК]
 ) ELSE (
 color 4F
-echo Проверка [FAIL]
-title ERROR!!! Шо делат? :O
-echo Запуск невозможен!
-echo Замечено, что вы не польностью разорхивировали
-echo Архив. Перетащите полностью все файлы, чтобы можно было включить
+echo %checkmsg% [FAIL]
+title %errortitle%
+echo %errorcheck%
+echo %errorcheck1%
 pause >nul
 exit)
 if exist resources\versions\1.11.jar (
-echo Проверка [ОК]
+echo %checkmsg% [ОК]
 ) ELSE (
 color 4F
-echo Проверка [FAIL]
-title ERROR!!! Шо делат? :O
-echo Запуск невозможен!
-echo Замечено, что вы не польностью разорхивировали
-echo Архив. Перетащите полностью все файлы, чтобы можно было включить
+echo %checkmsg% [FAIL]
+title %errortitle%
+echo %errorcheck%
+echo %errorcheck1%
 pause >nul
 exit)
 if exist resources\versions\1.9.2.jar (
-echo Проверка [ОК]
+echo %checkmsg% [ОК]
 ) ELSE (
 color 4F
-echo Проверка [FAIL]
-title ERROR!!! Шо делат? :O
-echo Запуск невозможен!
-echo Замечено, что вы не польностью разорхивировали
-echo Архив. Перетащите полностью все файлы, чтобы можно было включить
+echo %checkmsg% [FAIL]
+title %errortitle%
+echo %errorcheck%
+echo %errorcheck1%
 pause >nul
 exit)
 if exist resources\versions\1.9.jar (
-echo Проверка [ОК]
+echo %checkmsg% [ОК]
 ) ELSE (
 color 4F
-echo Проверка [FAIL]
-title ERROR!!! Шо делат? :O
-echo Запуск невозможен!
-echo Замечено, что вы не польностью разорхивировали
-echo Архив. Перетащите полностью все файлы, чтобы можно было включить
+echo %checkmsg% [FAIL]
+title %errortitle%
+echo %errorcheck%
+echo %errorcheck1%
 pause >nul
 exit)
 if exist resources\versions\1.8.9.jar (
-echo Проверка [ОК]
+echo %checkmsg% [ОК]
 ) ELSE (
 color 4F
-echo Проверка [FAIL]
-title ERROR!!! Шо делат? :O
-echo Запуск невозможен!
-echo Замечено, что вы не польностью разорхивировали
-echo Архив. Перетащите полностью все файлы, чтобы можно было включить
+echo %checkmsg% [FAIL]
+title %errortitle%
+echo %errorcheck%
+echo %errorcheck1%
 pause >nul
 exit)
 if exist resources\versions\1.8.1.jar (
-echo Проверка [ОК]
+echo %checkmsg% [ОК]
 ) ELSE (
 color 4F
-echo Проверка [FAIL]
-title ERROR!!! Шо делат? :O
-echo Запуск невозможен!
-echo Замечено, что вы не польностью разорхивировали
-echo Архив. Перетащите полностью все файлы, чтобы можно было включить
+echo %checkmsg% [FAIL]
+title %errortitle%
+echo %errorcheck%
+echo %errorcheck1%
 pause >nul
 exit)
 color a
-echo Проверка файлов завершена!
+echo %checksuccess%
 timeout /t 1 >nul
-echo Проверка лицензии...
-timeout /t 1 >nul
-if exist resources\UeNYVBQ_decinUHE.sll (
-goto start
-) ELSE (
-color 4F
-title ERROR!!! Шо делат? :O
-echo Программа не лицензирована!
-echo Убедитесь, что вы скачали с нужного источника!
-pause >nul
-exit)
 :start
 title SLauncher - By ZuVEnO 1.1
 set limit=0
 color 0F
 cls
-echo Добро пожаловать в SLauncher.
+echo %mainmenu_title%
 echo.
 echo.
-echo С помощью этого лаунчера вы можете создать сервер
-echo или же запустить его не замарачиваясь!
-echo create - создать сервер.
-echo select - включить сервер.
-echo ngrok - запустить ngrok.
-echo info - Узнать изменения.
-echo donate - Поддержать создателя.
-set /p start= Выберите команду: 
-if %start%== create GOTO newmain
-if %start%== select GOTO select
+echo %mainmenu_info%
+echo %mainmenu_info1%
+echo create - %mainmenu_create%
+echo start - %mainmenu_start%
+echo ngrok - %mainmenu_ngrok%
+echo info - %mainmenu_cmd_info%
+echo donate - %mainmenu_donate%
+set /p start= %mainmenu_select%
+if %start%== create GOTO new
+if %start%== start GOTO select
 if %start%== ngrok GOTO ngrokcheck
 if %start%== info GOTO info
 if %start%== donate start https://qiwi.com/n/ZUVENO
@@ -167,159 +285,70 @@ echo.
 echo Поддержите позязя хоть копеечкой :(
 echo https://qiwi.com/n/ZUVENO
 echo Нажмите на любую клавишу, чтобы вернуться в
-echo 		главное меню.
+echo 				главное меню.
+echo.
+echo.
+echo Information about the batch file:
+echo Version - 1.1
+echo.
+echo Changes:
+echo 1 - Added support for the ngrok module
+echo 2 - A module check was installed,
+echo resource changes and server availability.
+echo.
+echo.
+echo Support the call at least a pretty penny :(
+echo https://qiwi.com/n/ZUVENO
+echo 		Press any key to return to
+echo 				main menu.
 pause >nul
 goto start
 :ngrokcheck
 cls
-echo Проверяем на наличие модуля...
+echo %ngrokregcheck%
 timeout /t 1 >nul
-if exist ngrok.exe goto ngrok
-color 4F
-echo Модуль NgRok не установлен!
-echo Пожалуйста скачайте его на сайте ngrok.com
-echo зарегестрируйтесь и следуйте дальнейшим указаниям:
-echo 1. После регистрации скачайте ngrok.exe.
-echo 2. Поместите ngrok в папку modules.
-pause
-goto start
+if exist "%userprofile%\.ngrok2\ngrok.yml" (
+cls
+goto ngrok)
+echo %ngrokreg%
+echo %ngrokreg1%
+set /p ngroktoken=%ngrokreg2%
+md "%userprofile%\.ngrok2\"
+@echo authtoken: %ngroktoken%>%userprofile%\.ngrok2\ngrok.yml
+cls
+echo %ngrokregsuccess%
 :ngrok
-echo Чтобы ваш ngrok заработал укажите токен
-echo в батнике ngrok.bat
-echo Если вы это сделали тогда укажите порт
-set /p ngrokport=вашего сервера или мира: 
-cls
-echo Регистрируем ngrok...
-timeout /t 1 >nul
-if %ngroktoken%== "СЮДА ВАШ ТОКЕН" (
-color 4F
-title ERROR!!! Шо делат? :O
-echo ERROR: Вы не указали токен!
-echo Чтобы ваш ngrok заработал укажите токен
-echo в батнике ngrok.bat
-pause >nul
-goto start)
-ngrok authtoken %ngroktoken%
+echo %ngrok_msg%
+echo %ngrok_msg1%
+set /p ngrokport=%ngrokmsg_port%
+cd modules
 ngrok tcp %ngrokport%
-goto main
-:newmain
-title SLauncher - By ZuVEnO 1.1 MODE: Create server
-cls
-echo Где ваш рабочий стол?
-echo OneDrive / Пользователи
-set /p selectone=- 
-if %selectone%== OneDrive GOTO new1
-if %selectone%== Пользователи GOTO new
-cls
-goto newmain
-:new1
-cls
-echo Вы выбрали создание нового сервера.
-echo Хотите вернуться в главное меню - main
-echo Как будет зваться ваша папка? (Русские
-echo буквы не работают!!!)
-set /p dir=- 
-if %dir%==main GOTO start
-cls
-goto new21
-:new21
-echo Параметры:
-echo Название папки: %dir% Версия: ???
-echo Хотите вернуться в главное меню - main
-echo Если хотите сменить название - back
-echo.
-echo Доступные версии:
-echo 	1.8.1 	1.8.9
-echo 	1.9  	1.9.2
-echo 	1.11	1.12
-echo 	1.13	1.14
-echo 	1.15	1.16.1
-set /p ver=Выберите версию сервера: 
-if %ver%== main GOTO start
-if %ver%== back GOTO new1
-if %ver%== 1.8.1 GOTO callcore1
-if %ver%== 1.8.9 GOTO callcore1
-if %ver%== 1.9 GOTO callcore1
-if %ver%== 1.9.2 GOTO callcore1
-if %ver%== 1.11 GOTO callcore1
-if %ver%== 1.12 GOTO callcore1
-if %ver%== 1.13 GOTO callcore1
-if %ver%== 1.14 GOTO callcore1
-if %ver%== 1.15 GOTO callcore1
-if %ver%== 1.16.1 GOTO callcore1
-cls
-echo Вы не можете выбрать другую версию!
-echo.
-goto new21
-:callcore1
-cls
-echo Параметры:
-echo Название папки: %dir% Версия: %ver%
-echo Хотите вернуться в главное меню - main
-echo Если хотите сменить название - back
-echo.
-echo Как бы вы хотели назвать ядро?(Русские
-echo буквы не работают!!!)
-set /p callcore=- 
-goto create1
-:create1
-cls
-title Creating...
-color e
-echo Создаём папку сервера...
-md "%userprofile%\OneDrive\Рабочий стол\ServerProjects\%dir%\"
-md "%userprofile%\OneDrive\Рабочий стол\ServerProjects\%dir%\plugins\"
-echo Проверка на наличие данного ядра...
-timeout /t 1 >nul
-if exist resources\versions\%ver%.jar goto create21
-echo.
-color 4F
-title ERROR!!! Шо делат? :O
-echo ERROR: Данный ресурс отсутствует!
-echo Возможно вы удалили или переместили ядро сервера.
-echo Пожалуйста переустановите все ресурсы!
-pause >nul
-exit
-:create21
-echo Перемещаем ядро сервера...
-copy resources\versions\%ver%.jar "%userprofile%\OneDrive\Рабочий стол\ServerProjects\%dir%\"
-rename "%userprofile%\OneDrive\Рабочий стол\ServerProjects\%dir%\%ver%.jar" "%callcore%.jar"
-echo Добавляем обязательные плюхи...
-copy resources\eula.txt "%userprofile%\OneDrive\Рабочий стол\ServerProjects\%dir%\"
-copy resources\plugins\* "%userprofile%\OneDrive\Рабочий стол\ServerProjects\%dir%\plugins\"
-copy resources\server.properties "%userprofile%\OneDrive\Рабочий стол\ServerProjects\%dir%\"
-copy resources\server-icon.png "%userprofile%\OneDrive\Рабочий стол\ServerProjects\%dir%\"
-color a
-title Succesful!
-echo Сервер создался!
-echo Проверьте сервер на рабочем столе
-echo Если всё ок нажмите, чтобы продолжить
-pause >nul
+cd ..
 goto start
 :new
 title SLauncher - By ZuVEnO 1.0 MODE: Create server
 cls
-echo Вы выбрали создание нового сервера.
-echo Хотите вернуться в главное меню - main
-echo Как будет зваться ваша папка? (Русские
-echo буквы не работают!!!)
+echo %create_msg%
+echo.
+echo %create_msg1%
+%russianletters%
 set /p dir=- 
 if %dir%==main GOTO start
 goto new2
 :new2
 cls
-echo Параметры:
-echo Название папки: %dir% Версия: ???
-echo Хотите вернуться в главное меню - main
-echo Если хотите сменить название - back
+echo %settings%
+echo %foldername% %dir%
+echo %everymsg%
+echo %everymsg1%
 echo.
-echo Доступные версии:
+echo %versionsavil%
 echo 	1.8.1 	1.8.9
 echo 	1.9  	1.9.2
 echo 	1.11	1.12
 echo 	1.13	1.14
 echo 	1.15	1.16.1
-set /p ver=Выберите версию сервера: 
+set /p ver=%versionsel%
 if %ver%== main GOTO start
 if %ver%== back GOTO new
 if %ver%== 1.8.1 GOTO callcore
@@ -334,118 +363,111 @@ if %ver%== 1.15 GOTO callcore
 if %ver%== 1.16.1 GOTO callcore
 goto new2
 :callcore
-echo Параметры:
-echo Название папки: %dir% Версия: %ver%
-echo Хотите вернуться в главное меню - main
-echo Если хотите сменить название - back
+echo %settings%
+echo %foldername%%dir% %selectedver% %ver%
+echo %everymsg%
+echo %everymsg1%
 echo.
-echo Как бы вы хотели назвать ядро?(Русские
-echo буквы не работают!!!)
+echo %create_callcore_msg%
+%russianletters%
 set /p callcore=- 
 goto create
 :create
 cls
 title Creating...
 color e
-echo Создаём папку сервера...
-md "%userprofile%\Рабочий стол\ServerProjects\%dir%\"
-md "%userprofile%\Рабочий стол\ServerProjects\%dir%\plugins\"
-echo Проверка на наличие данного ядра...
-timeout /t 1 >nul
-if exist resources\versions\%ver%.jar goto create2
-echo.
-color 4F
-title ERROR!!! Шо делат? :O
-echo ERROR: Данный ресурс отсутствует!
-echo Возможно вы удалили или переместили ядро сервера.
-echo Пожалуйста переустановите все ресурсы!
-pause >nul
-exit
-:create2
-echo Перемещаем ядро сервера...
-copy resources\versions\%ver%.jar "%userprofile%\Рабочий стол\ServerProjects\%dir%\"
-rename "%userprofile%\Рабочий стол\ServerProjects\%dir%\%ver%.jar" "%callcore%.jar"
-echo Добавляем обязательные плюхи...
-copy resources\eula.txt "%userprofile%\Рабочий стол\ServerProjects\%dir%\"
-copy resources\plugins\* "%userprofile%\Рабочий стол\ServerProjects\%dir%\plugins\"
-copy resources\server.properties "%userprofile%\Рабочий стол\ServerProjects\%dir%\"
-copy resources\server-icon.png "%userprofile%\Рабочий стол\ServerProjects\%dir%\"
+echo %createstep1%
+if exist "%userprofile%\Desktop" set newservfolder=%userprofile%\Desktop
+if exist "%userprofile%\OneDrive\Desktop" set newservfolder=%userprofile%\OneDrive\Desktop
+if exist "%userprofile%\Рабочий стол" set newservfolder=%userprofile%\Рабочий стол
+if exist "%userprofile%\OneDrive\Рабочий стол" set newservfolder=%userprofile%\OneDrive\Рабочий стол
+md "%newservfolder%\ServerProjects\%dir%\"
+md "%newservfolder%\ServerProjects\%dir%\plugins\"
+echo %createstep2%
+copy resources\versions\%ver%.jar "%newservfolder%\ServerProjects\%dir%\"
+rename "%newservfolder%\ServerProjects\%dir%\%ver%.jar" "%callcore%.jar"
+echo %createstep3%
+copy resources\eula.txt "%newservfolder%\ServerProjects\%dir%\"
+copy resources\plugins\* "%newservfolder%\ServerProjects\%dir%\plugins\"
+copy resources\server.properties "%newservfolder%\ServerProjects\%dir%\"
+copy resources\server-icon.png "%newservfolder%\ServerProjects\%dir%\"
 color a
 title Succesful!
-echo Сервер создался!
-echo Проверьте сервер на рабочем столе
-echo Если всё ок нажмите, чтобы продолжить
+echo %createsuccess%
+echo %createsuccess1%
+echo %createsuccess2%
 pause >nul
 goto start
 :select
 cls
 title SLauncher - By ZuVEnO 1.1 MODE: Select server
-echo Вы выбрали запуск сервера.
-echo Хотите вернуться в главное меню - main
-echo Если вдруг поставите буквы сервер не запустится!
-echo Перед запуском укажите пожалуйста лимит
-set /p limit=памяти (Обязательно в МБ!!!): 
+echo %start_msg%
+echo %everymsg%
+echo %limitsetmsg%
+echo %limitsetmsg1%
+set /p limit=%limitsetmsg2%
 goto way
 :way
 title SLauncher - By ZuVEnO 1.1 MODE: Select server
 cls
 color 0F
-echo Выставленные параметры:
-echo Ограничение на %limit%M
-echo Если хотите сменить ограничение напишите - back
-echo Хотите вернуться в главное меню - main
-echo Если сервер на рабочем столе - desktop
-echo Если рабочий стол синхровизирован с OneDrive - desktop-od
-echo Путь: %way%
-echo Если вы закончили - next
-set /p way=Укажите путь к ядру сервера (без пробелов!!!): 
+echo %settings%
+echo %memorylimit% %limit%M
+echo %everymsg%
+echo %everymsg1%
+echo %waydesktop%
+cd
+echo %waynext%
+set /p way=%start_way%
 if %way%== back GOTO select
 if %way%== main GOTO START
 if %way%== next GOTO servera
-If %way%== desktop-od (CD %userprofile%\OneDrive\Рабочий стол
-set way=Рабочий стол
-goto way)
-If %way%== desktop (CD %userprofile%\Рабочий стол
-set way=Рабочий стол
+If %way%== desktop (
+if exist "%userprofile%\Рабочий стол" CD %userprofile%\Рабочий стол
+if exist "%userprofile%\Desktop" CD %userprofile%\Desktop
+if exist "%userprofile%\OneDrive\Рабочий стол" CD %userprofile%\OneDrive\Рабочий стол
+if exist "%userprofile%\OneDrive\Desktop" CD %userprofile%\OneDrive\Desktop
+set way=%desktop%
 goto way)
 if exist "%way%" (
 cd %way%
 goto way)
 cls
 color 4F
-title ERROR!!! Шо делат? :O
-echo ERROR: Данной папки нет!
-echo Пожалуйста смените путь к серверу.
+title %errortitle%
+echo %errorway%
+echo 
 pause >nul
 goto way
 :servera
 title SLauncher - By ZuVEnO 1.1 MODE: Select server
 cls
 color 0F
-echo Выставленные параметры:
-echo Ограничение на %limit%M Путь: %way%
-echo Хотите вернуться в главное меню - main
-echo Если хотите сменить путь напишите back
-set /p core=Название ядра (без .jar): 
+echo %settings%
+echo %memorylimit% %limit%MB
+cd
+echo %everymsg%
+echo %everymsg1%
+set /p core=%namecore%: 
 if %core%== back GOTO way
 if %core%== main GOTO START
 if exist "%core%.jar" goto servstart
 cls
 color 4F
-title ERROR!!! Шо делат? :O
-echo ERROR: Данного ядра нет!
-echo Пожалуйста измените название ядра.
+title %errortitle%
+echo %errorcore%
+echo %errorcore1%
 pause >nul
 goto servera
 :servstart
 cls
-echo Сервер запустится через минту...
+echo %serverstarting%
 title SLauncher - Server Started
 java -Xincgc -Xmx%Limit%M -jar "%core%.jar"
 color 4F
 echo.
-echo 		СЕРВЕР ОСТАНОВЛЕН!!!
-echo  Нажмите, чтобы закрыть программу.
+echo 		%serverstopped%
+echo  %serverstopped1%
 title SLauncher - Server Stopped!!!
 pause >nul
 exit
