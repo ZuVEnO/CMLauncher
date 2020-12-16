@@ -1,5 +1,5 @@
 # SLauncher
-###RU
+## RU
 - Этот лаунчер предназначен для тех, кто создаёт сервера по игре Minecraft.
 
 Как он работает?
@@ -15,7 +15,7 @@ Create, start и ngrok.
 
 Скачать можете и код и в релизах.
 
-###EN
+## EN
 - This launcher is intended for those who create servers for the game Minecraft.
 
 How does he work?
