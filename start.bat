@@ -138,8 +138,88 @@ goto check
 :check
 title Check modules...
 set way=Не указан
-if exist resources\versions\1.16.1.jar (
-echo %checkmsg% [ОК]
+if exist resources\versions\Spigot\1.16.1.jar (
+echo %checkmsg% resources\versions\Spigot\1.16.1.jar [ОК]
+) ELSE (
+color 4F
+echo %checkmsg% resources\versions\Spigot\1.16.1.jar [FAIL]
+title %errortitle%
+echo %errorcheck%
+echo %errorcheck1%
+pause >nul
+exit)
+if exist resources\versions\Spigot\1.15.jar (
+echo %checkmsg% resources\versions\Spigot\1.15.jar [ОК]
+) ELSE (
+color 4F
+echo %checkmsg% resources\versions\Spigot\1.15.jar [FAIL]
+title %errortitle%
+echo %errorcheck%
+echo %errorcheck1%
+pause >nul
+exit)
+if exist resources\versions\Spigot\1.14.jar (
+echo %checkmsg% resources\versions\Spigot\1.14.jar [ОК]
+) ELSE (
+echo %checkmsg% resources\versions\Spigot\1.14.jar [FAIL]
+color 4F
+title %errortitle%
+echo %errorcheck%
+echo %errorcheck1%
+pause >nul
+exit)
+if exist resources\versions\Spigot\1.13.jar (
+echo %checkmsg% resources\versions\Spigot\1.13.jar [ОК]
+) ELSE (
+color 4F
+echo %checkmsg% resources\versions\Spigot\1.13.jar [FAIL]
+title %errortitle%
+echo %errorcheck%
+echo %errorcheck1%
+pause >nul
+exit)
+if exist resources\versions\Spigot\1.12.jar (
+echo %checkmsg% resources\versions\Spigot\1.12.jar [ОК]
+) ELSE (
+color 4F
+echo %checkmsg% resources\versions\Spigot\1.12.jar [FAIL]
+title %errortitle%
+echo %errorcheck%
+echo %errorcheck1%
+pause >nul
+exit)
+if exist resources\versions\Spigot\1.11.jar (
+echo %checkmsg% resources\versions\Spigot\1.11.jar [ОК]
+) ELSE (
+color 4F
+echo %checkmsg% resources\versions\Spigot\1.11.jar [FAIL]
+title %errortitle%
+echo %errorcheck%
+echo %errorcheck1%
+pause >nul
+exit)
+if exist resources\versions\Spigot\1.9.2.jar (
+echo %checkmsg% resources\versions\Spigot\1.9.2.jar [ОК]
+) ELSE (
+color 4F
+echo %checkmsg% resources\versions\Spigot\1.9.2.jar [FAIL]
+title %errortitle%
+echo %errorcheck%
+echo %errorcheck1%
+pause >nul
+exit)
+if exist resources\versions\Spigot\1.9.jar (
+echo %checkmsg% resources\versions\Spigot\1.9.jar [ОК]
+) ELSE (
+color 4F
+echo %checkmsg% resources\versions\Spigot\1.9.jar [FAIL]
+title %errortitle%
+echo %errorcheck%
+echo %errorcheck1%
+pause >nul
+exit)
+if exist resources\versions\Spigot\1.8.9.jar (
+echo %checkmsg% resources\versions\Spigot\1.8.9.jar [ОК]
 ) ELSE (
 color 4F
 echo %checkmsg% [FAIL]
@@ -148,111 +228,31 @@ echo %errorcheck%
 echo %errorcheck1%
 pause >nul
 exit)
-if exist resources\versions\1.15.jar (
-echo %checkmsg% [ОК]
+if exist resources\versions\Spigot\1.8.1.jar (
+echo %checkmsg% resources\versions\Spigot\1.8.1.jar [ОК]
 ) ELSE (
 color 4F
-echo %checkmsg% [FAIL]
-title %errortitle%
-echo %errorcheck%
-echo %errorcheck1%
-pause >nul
-exit)
-if exist resources\versions\1.14.jar (
-echo %checkmsg% [ОК]
-) ELSE (
-echo %checkmsg% [FAIL]
-color 4F
-title %errortitle%
-echo %errorcheck%
-echo %errorcheck1%
-pause >nul
-exit)
-if exist resources\versions\1.13.jar (
-echo %checkmsg% [ОК]
-) ELSE (
-color 4F
-echo %checkmsg% [FAIL]
-title %errortitle%
-echo %errorcheck%
-echo %errorcheck1%
-pause >nul
-exit)
-if exist resources\versions\1.12.jar (
-echo %checkmsg% [ОК]
-) ELSE (
-color 4F
-echo %checkmsg% [FAIL]
-title %errortitle%
-echo %errorcheck%
-echo %errorcheck1%
-pause >nul
-exit)
-if exist resources\versions\1.11.jar (
-echo %checkmsg% [ОК]
-) ELSE (
-color 4F
-echo %checkmsg% [FAIL]
-title %errortitle%
-echo %errorcheck%
-echo %errorcheck1%
-pause >nul
-exit)
-if exist resources\versions\1.9.2.jar (
-echo %checkmsg% [ОК]
-) ELSE (
-color 4F
-echo %checkmsg% [FAIL]
-title %errortitle%
-echo %errorcheck%
-echo %errorcheck1%
-pause >nul
-exit)
-if exist resources\versions\1.9.jar (
-echo %checkmsg% [ОК]
-) ELSE (
-color 4F
-echo %checkmsg% [FAIL]
-title %errortitle%
-echo %errorcheck%
-echo %errorcheck1%
-pause >nul
-exit)
-if exist resources\versions\1.8.9.jar (
-echo %checkmsg% [ОК]
-) ELSE (
-color 4F
-echo %checkmsg% [FAIL]
-title %errortitle%
-echo %errorcheck%
-echo %errorcheck1%
-pause >nul
-exit)
-if exist resources\versions\1.8.1.jar (
-echo %checkmsg% [ОК]
-) ELSE (
-color 4F
-echo %checkmsg% [FAIL]
+echo %checkmsg% resources\versions\Spigot\1.8.1.jar [FAIL]
 title %errortitle%
 echo %errorcheck%
 echo %errorcheck1%
 pause >nul
 exit)
 if exist resources\configs (
-echo %checkmsg% [ОК]
+echo %checkmsg% resources\configs [ОК]
 ) ELSE (
 color 4F
-echo %checkmsg% [FAIL]
+echo %checkmsg% resources\configs [FAIL]
 title %errortitle%
 echo %errorcheck%
 echo %errorcheck1%
 pause >nul
 exit)
 if exist resources\plugins (
-echo %checkmsg% [ОК]
+echo %checkmsg% resources\plugins [ОК]
 ) ELSE (
 color 4F
-echo %checkmsg% [FAIL]
+echo %checkmsg% resources\plugins [FAIL]
 title %errortitle%
 echo %errorcheck%
 echo %errorcheck1%
@@ -262,7 +262,7 @@ color a
 echo %checksuccess%
 timeout /t 1 >nul
 :start
-title CMLauncher - By ZuVEnO 1.1
+title CMLauncher - By ZuVEnO 1.2
 set limit=0
 color 0F
 cls
@@ -285,13 +285,14 @@ if %start%== donate start https://qiwi.com/n/ZUVENO
 goto start
 :info
 cls
-echo Информация о батнике:
-echo Версия - 1.1
+echo Информация:
+echo Версия - 1.2
 echo.
 echo Изменения:
-echo 1 - Добавлена поддержка модуля ngrok
-echo 2 - Была установлена проверка модуля,
-echo изменения ресурсов и на наличие сервера.
+echo 1 - Добавлен лог для проверки при
+echo отсутствии какого-то файла.
+echo 2 - Добавлена поддержка остальных ядр:
+echo Forge, Magma, Thermos, Bukkit, Vanilla, Paper
 echo.
 echo.
 echo Поддержите позязя хоть копеечкой :(
@@ -300,13 +301,14 @@ echo Нажмите на любую клавишу, чтобы вернуться в
 echo 				главное меню.
 echo.
 echo.
-echo Information about the batch file:
-echo Version - 1.1
+echo Information:
+echo Version - 1.2
 echo.
 echo Changes:
-echo 1 - Added support for the ngrok module
-echo 2 - A module check was installed,
-echo resource changes and server availability.
+echo 1 - Added log for scanning resources
+echo if this resource hasn't.
+echo 2 - Added support another server cores:
+echo Forge, Magma, Thermos, Bukkit, Vanilla, Paper
 echo.
 echo.
 echo Support the call at least a pretty penny :(
@@ -338,7 +340,7 @@ ngrok tcp %ngrokport%
 cd ..
 goto start
 :new
-title CMLauncher - By ZuVEnO 1.1 MODE: Create server
+title CMLauncher - By ZuVEnO 1.2 MODE: Create server
 cls
 echo %create_msg%
 echo.
@@ -396,7 +398,7 @@ if exist "%userprofile%\OneDrive\Рабочий стол" set newservfolder=%userprofile%\O
 md "%newservfolder%\ServerProjects\%dir%\"
 md "%newservfolder%\ServerProjects\%dir%\plugins\"
 echo %createstep2%
-copy resources\versions\%ver%.jar "%newservfolder%\ServerProjects\%dir%\"
+copy resources\versions\Spigot\%ver%.jar "%newservfolder%\ServerProjects\%dir%\"
 rename "%newservfolder%\ServerProjects\%dir%\%ver%.jar" "%callcore%.jar"
 echo %createstep3%
 md "%newservfolder%\ServerProjects\%dir%\plugins\Essentials\"
@@ -418,7 +420,7 @@ pause >nul
 goto start
 :select
 cls
-title CMLauncher - By ZuVEnO 1.1 MODE: Select server
+title CMLauncher - By ZuVEnO 1.2 MODE: Select server
 echo %start_msg%
 echo %everymsg%
 echo %limitsetmsg%
@@ -426,7 +428,7 @@ echo %limitsetmsg1%
 set /p limit=%limitsetmsg2%
 goto way
 :way
-title CMLauncher - By ZuVEnO 1.1 MODE: Select server
+title CMLauncher - By ZuVEnO 1.2 MODE: Select server
 cls
 color 0F
 echo %settings%
@@ -458,7 +460,7 @@ echo
 pause >nul
 goto way
 :servera
-title CMLauncher - By ZuVEnO 1.1 MODE: Select server
+title CMLauncher - By ZuVEnO 1.2 MODE: Select server
 cls
 color 0F
 echo %settings%
