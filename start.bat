@@ -606,10 +606,10 @@ if %way%== back GOTO select
 if %way%== main GOTO START
 if %way%== next GOTO servera
 If %way%== desktop (
-if exist "%userprofile%\Рабочий стол" CD %userprofile%\Рабочий стол
 if exist "%userprofile%\Desktop" CD %userprofile%\Desktop
-if exist "%userprofile%\OneDrive\Рабочий стол" CD %userprofile%\OneDrive\Рабочий стол
+if exist "%userprofile%\Рабочий стол" CD %userprofile%\Рабочий стол
 if exist "%userprofile%\OneDrive\Desktop" CD %userprofile%\OneDrive\Desktop
+if exist "%userprofile%\OneDrive\Рабочий стол" CD %userprofile%\OneDrive\Рабочий стол
 set way=%desktop%
 goto way)
 if exist "%way%" (
