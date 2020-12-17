@@ -1,4 +1,5 @@
 @echo off
+set createbatlimit=none
 :lang
 title Select lang.
 echo Select lang \ Выберите язык
@@ -22,6 +23,9 @@ set errortitle=Ааа! Ошибка STOP-000000000000
 set errorcheck=ERROR: недостаточно ресурсов
 set errorcheck1=Пожалуйста, скачайте ещё раз CMLauncher.exe
 ::ПО УМОЛЧАНИЮ
+set createserv_forge=Перемещаем ядро сервера...
+set servtype=Тип ядра:
+set batfile1=Спасибо, что используете CMLauncher!
 set serverstopped1=Нажмите, чтобы закрыть.
 set serverstopped=СЕРВЕР ОСТАНОВЛЕН!!!
 set serverstarting=Сервер запустится через минту...
@@ -63,6 +67,7 @@ set mainmenu_info1=сервер или запустите его, не заморачиваясь!
 set mainmenu_create=Создать сервер.
 set mainmenu_start=Запустить сервер.
 set mainmenu_donate=Пожертвовать на дошик.
+set foldername=Название папки:
 set mainmenu_cmd_info=Проверить изменения.
 set mainmenu_ngrok=Запустить NgRok.
 set create_msg=Вы выбрали создание нового сервера.
@@ -82,6 +87,12 @@ set errorcheck1=Re-download CMLauncher.exe
 set errorngrok=ERROR: NgRok is not registered!
 set errorngrok1=Please enter your authtoken in the ngrok.yml
 ::DEFAULT
+set createserv_forge=Moving libraries...
+set servtype=Server-core type:
+set batfile1=Thank you for using CMLauncher!
+set createbat_msg=If you want create bat starter server?
+set createbat_msg1=If yes select memory limit
+set createbat_msg2=If no just press enter.
 set serverstopped1=Click to close the program
 set serverstopped=SERVER STOPPED!!!
 set serverstarting=Server starts up in one minute
@@ -238,21 +249,101 @@ echo %errorcheck%
 echo %errorcheck1%
 pause >nul
 exit)
-if exist resources\configs (
-echo %checkmsg% resources\configs [ОК]
+if exist resources\versions\CraftBukkit\1.16.1.jar (
+echo %checkmsg% resources\versions\CraftBukkit\1.16.1.jar [ОК]
 ) ELSE (
 color 4F
-echo %checkmsg% resources\configs [FAIL]
+echo %checkmsg% resources\versions\CraftBukkit\1.16.1.jar [FAIL]
 title %errortitle%
 echo %errorcheck%
 echo %errorcheck1%
 pause >nul
 exit)
-if exist resources\plugins (
-echo %checkmsg% resources\plugins [ОК]
+if exist resources\versions\CraftBukkit\1.15.jar (
+echo %checkmsg% resources\versions\CraftBukkit\1.15.jar [ОК]
 ) ELSE (
 color 4F
-echo %checkmsg% resources\plugins [FAIL]
+echo %checkmsg% resources\versions\CraftBukkit\1.15.jar [FAIL]
+title %errortitle%
+echo %errorcheck%
+echo %errorcheck1%
+pause >nul
+exit)
+if exist resources\versions\CraftBukkit\1.14.jar (
+echo %checkmsg% resources\versions\CraftBukkit\1.14.jar [ОК]
+) ELSE (
+echo %checkmsg% resources\versions\CraftBukkit\1.14.jar [FAIL]
+color 4F
+title %errortitle%
+echo %errorcheck%
+echo %errorcheck1%
+pause >nul
+exit)
+if exist resources\versions\CraftBukkit\1.13.jar (
+echo %checkmsg% resources\versions\CraftBukkit\1.13.jar [ОК]
+) ELSE (
+color 4F
+echo %checkmsg% resources\versions\CraftBukkit\1.13.jar [FAIL]
+title %errortitle%
+echo %errorcheck%
+echo %errorcheck1%
+pause >nul
+exit)
+if exist resources\versions\CraftBukkit\1.12.jar (
+echo %checkmsg% resources\versions\CraftBukkit\1.12.jar [ОК]
+) ELSE (
+color 4F
+echo %checkmsg% resources\versions\CraftBukkit\1.12.jar [FAIL]
+title %errortitle%
+echo %errorcheck%
+echo %errorcheck1%
+pause >nul
+exit)
+if exist resources\versions\CraftBukkit\1.11.jar (
+echo %checkmsg% resources\versions\CraftBukkit\1.11.jar [ОК]
+) ELSE (
+color 4F
+echo %checkmsg% resources\versions\CraftBukkit\1.11.jar [FAIL]
+title %errortitle%
+echo %errorcheck%
+echo %errorcheck1%
+pause >nul
+exit)
+if exist resources\versions\CraftBukkit\1.9.2.jar (
+echo %checkmsg% resources\versions\CraftBukkit\1.9.2.jar [ОК]
+) ELSE (
+color 4F
+echo %checkmsg% resources\versions\CraftBukkit\1.9.2.jar [FAIL]
+title %errortitle%
+echo %errorcheck%
+echo %errorcheck1%
+pause >nul
+exit)
+if exist resources\versions\CraftBukkit\1.9.jar (
+echo %checkmsg% resources\versions\CraftBukkit\1.9.jar [ОК]
+) ELSE (
+color 4F
+echo %checkmsg% resources\versions\CraftBukkit\1.9.jar [FAIL]
+title %errortitle%
+echo %errorcheck%
+echo %errorcheck1%
+pause >nul
+exit)
+if exist resources\versions\Thermos\1.7.10.jar (
+echo %checkmsg% resources\versions\Thermos\1.7.10.jar [ОК]
+) ELSE (
+color 4F
+echo %checkmsg% resources\versions\Thermos\1.7.10.jar [FAIL]
+title %errortitle%
+echo %errorcheck%
+echo %errorcheck1%
+pause >nul
+exit)
+if exist resources\versions\Thermos\1.7.10.jar (
+echo %checkmsg% resources\versions\Magma\1.12.2.jar [ОК]
+) ELSE (
+color 4F
+echo %checkmsg% resources\versions\Magma\1.12.2.jar [FAIL]
 title %errortitle%
 echo %errorcheck%
 echo %errorcheck1%
@@ -292,7 +383,7 @@ echo Изменения:
 echo 1 - Добавлен лог для проверки при
 echo отсутствии какого-то файла.
 echo 2 - Добавлена поддержка остальных ядр:
-echo Forge, Magma, Thermos, Bukkit, Vanilla, Paper
+echo Magma, Thermos, CraftBukkit, Paper
 echo.
 echo.
 echo Поддержите позязя хоть копеечкой :(
@@ -308,7 +399,7 @@ echo Changes:
 echo 1 - Added log for scanning resources
 echo if this resource hasn't.
 echo 2 - Added support another server cores:
-echo Forge, Magma, Thermos, Bukkit, Vanilla, Paper
+echo Magma, Thermos, CraftBukkit, Paper
 echo.
 echo.
 echo Support the call at least a pretty penny :(
@@ -348,11 +439,38 @@ echo %create_msg1%
 %russianletters%
 set /p dir=- 
 if %dir%==main GOTO start
-goto new2
+goto servcore
+:servcore
+echo %settings%
+echo %foldername% %dir%
+
+
+set /p servercoretype=:-
+if %servercoretype%== Bukkit (
+set servercoretype=CraftBukkit
+goto newbukkit)
+if %servercoretype%== CraftBukkit (
+set servercoretype=CraftBukkit
+goto newbukkit)
+if %servercoretype%== Spigot (
+set servercoretype=Spigot
+goto new2)
+if %servercoretype%== Forge (
+set servercoretype=Forge
+goto newforge)
+if %servercoretype%== Thermos (
+set servercoretype=Thermos
+set ver=1.7.10
+goto createbat)
+if %servercoretype%== Magma (
+set servercoretype=Magma
+set ver=1.12.2
+goto createbat)
+goto servcore
 :new2
 cls
 echo %settings%
-echo %foldername% %dir%
+echo %foldername% %dir% %servtype% %servercoretype%
 echo %everymsg%
 echo %everymsg1%
 echo.
@@ -376,16 +494,47 @@ if %ver%== 1.14 GOTO callcore
 if %ver%== 1.15 GOTO callcore
 if %ver%== 1.16.1 GOTO callcore
 goto new2
+:newbukkit
+cls
+echo %settings%
+echo %foldername% %dir% %servtype% %servercoretype%
+echo %everymsg%
+echo %everymsg1%
+echo.
+echo %versionsavil%
+echo 	1.9  	1.9.2
+echo 	1.11	1.12
+echo 	1.13	1.14
+echo 	1.15	1.16.1
+set /p ver=%versionsel%
+if %ver%== main GOTO start
+if %ver%== back GOTO new
+if %ver%== 1.9 GOTO callcore
+if %ver%== 1.9.2 GOTO callcore
+if %ver%== 1.11 GOTO callcore
+if %ver%== 1.12 GOTO callcore
+if %ver%== 1.13 GOTO callcore
+if %ver%== 1.14 GOTO callcore
+if %ver%== 1.15 GOTO callcore
+if %ver%== 1.16.1 GOTO callcore
+goto newbukkit
 :callcore
 echo %settings%
-echo %foldername%%dir% %selectedver% %ver%
+echo %foldername%%dir% %servtype% %servercoretype% %selectedver% %ver%
 echo %everymsg%
 echo %everymsg1%
 echo.
 echo %create_callcore_msg%
 %russianletters%
 set /p callcore=- 
-goto create
+goto createbat
+:createbat
+echo %settings%
+echo %foldername%
+echo %createbat_msg%
+echo %createbat_msg1%
+echo %createbat_msg2%
+set /p batlimit=- 
 :create
 cls
 title Creating...
@@ -397,9 +546,23 @@ if exist "%userprofile%\Рабочий стол" set newservfolder=%userprofile%\Рабочий ст
 if exist "%userprofile%\OneDrive\Рабочий стол" set newservfolder=%userprofile%\OneDrive\Рабочий стол
 md "%newservfolder%\ServerProjects\%dir%\"
 md "%newservfolder%\ServerProjects\%dir%\plugins\"
+if %createbatlimit%== none GOTO CREATESTEP2
+echo %createbat%
+@echo @echo off>%newservfolder%\ServerProjects\%dir%\start.bat
+@echo echo %batfile1%>>%newservfolder%\ServerProjects\%dir%\start.bat
+@echo java -Xincgc -Xmx%batLimit%M -jar %callcore%.jar>>>%newservfolder%\ServerProjects\%dir%\start.bat
+:CREATESTEP2
 echo %createstep2%
-copy resources\versions\Spigot\%ver%.jar "%newservfolder%\ServerProjects\%dir%\"
+copy resources\versions\%servercoretype%\%ver%.jar "%newservfolder%\ServerProjects\%dir%\"
 rename "%newservfolder%\ServerProjects\%dir%\%ver%.jar" "%callcore%.jar"
+if %servercoretype%== Magma (
+echo %createserv_forge%
+md "%newservfolder%\ServerProjects\%dir%\libraries\"
+copy resources\libraries\1.12.2\* "%newservfolder%\ServerProjects\%dir%\libraries\")
+if %servercoretype%== Thermos (
+echo %createserv_forge%
+md "%newservfolder%\ServerProjects\%dir%\libraries\"
+copy resources\libraries\1.7.10\* "%newservfolder%\ServerProjects\%dir%\libraries\")
 echo %createstep3%
 md "%newservfolder%\ServerProjects\%dir%\plugins\Essentials\"
 md "%newservfolder%\ServerProjects\%dir%\plugins\AutoMessage\"
