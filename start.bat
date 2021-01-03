@@ -1,4 +1,7 @@
 @echo off
+set createbatlimit=none
+set currectver=1.2
+cls
 :lang
 title Select lang.
 echo Select lang \ Выберите язык
@@ -9,19 +12,34 @@ if %lang%== 1 goto langru
 if %lang%== 2 goto langen
 goto lang
 
-
 :langru
 :: ПРОШЛО
 set ngrokregsuccess=NgRok зарегистрирован!
-set createduccess=Сервер создан!
-set createduccess1=Проверьте свой рабочий стол.
-set createduccess2=Нажмите любую клавишу, чтобы перейти в главное меню.
+set createsuccess=Сервер создан!
+set createsuccess1=Проверьте свой рабочий стол.
+set createsuccess2=Нажмите любую клавишу, чтобы перейти в главное меню.
 set checksuccess=Проверка файла завершена!
 :: ОШИБКИ
 set errortitle=Ааа! Ошибка STOP-000000000000
-set errorcheck=ERROR: недостаточно ресурсов
-set errorcheck1=Пожалуйста, скачайте ещё раз SLauncher.exe
+set errorcheck=ERROR: Пропущен файл:
+set errorcheck1=Пожалуйста, скачайте ещё раз CMLauncher.exe Если вдруг у вас опять эта ошибка напишите создателю
 ::ПО УМОЛЧАНИЮ
+set prerelease=				  ПРЕДУПРЕЖДЕНИЕ!!!
+set prerelease1=		Вы используете Pre-Release!!!
+set prerelease2=	   В этой версии будут доступны функции,
+set prerelease3=	 которые наверное будут добавлены в новую. Но
+set prerelease4=косяк в том, что функции будут работать неправильно
+set prereleaseaccess=Если вы уверены, что хотите использовать его то нажмите на любую клавишу...
+set limitsetmsg1=Перед запуском укажите лимит памяти
+set limitsetmsg2=(Обязательно в МБ!!!): 
+set currectfold=Выбрана папка:
+set createserv_forge=Перемещаем ядро сервера...
+set servtype=Тип ядра:
+set servercoremsg=Выберите вам подхотящий тип ядра
+set batfile1=Спасибо, что используете CMLauncher!
+set createbat_msg=Хотите сделать отдельный bat-файл, чтобы он
+set createbat_msg1=запускал сервер? Если да укажите лими памяти
+set createbat_msg2=Если нет напишите skip
 set serverstopped1=Нажмите, чтобы закрыть.
 set serverstopped=СЕРВЕР ОСТАНОВЛЕН!!!
 set serverstarting=Сервер запустится через минту...
@@ -35,9 +53,9 @@ set russianletters=echo (Русские буквы не работают!!!)
 set start_msg=Вы выбрали запуск сервера.
 set start_way=Укажите путь к ядру сервера (БЕЗ ПРОБЕЛОВ!!!): 
 set create_callcore_msg=Как бы вы хотели назвать ядро сервера?
-set createdtep1=Создание папки...
-set createdtep2=Перемещение ядра сервера...
-set createdtep3=Добавление необходимых дополнений...
+set createstep1=Создание папки...
+set createstep2=Перемещение ядра сервера...
+set createstep3=Добавление необходимых дополнений...
 set settings=Атрибуты:
 set versionsavil=Доступные версии: 
 set versionsel=Выбрать версию minecraft для сервера: 
@@ -57,15 +75,17 @@ set ngrokreg2=Ngrok токен:
 set ngrokregcheck=Проверка регистрации...
 set ngrokmsg_port=Введите порт вашего сервера или мира:
 set mainmenu_select=Введите команду: 
-set mainmenu_title=Добро пожаловать в SLauncher.
+set mainmenu_title=Добро пожаловать в CMLauncher.
 set mainmenu_info=С помощью этой пусковой установки вы можете создавать
 set mainmenu_info1=сервер или запустите его, не заморачиваясь!
 set mainmenu_create=Создать сервер.
 set mainmenu_start=Запустить сервер.
 set mainmenu_donate=Пожертвовать на дошик.
+set foldername=Название папки:
 set mainmenu_cmd_info=Проверить изменения.
 set mainmenu_ngrok=Запустить NgRok.
 set create_msg=Вы выбрали создание нового сервера.
+set lang=ru
 goto check
 :langen
 ::SUCCESS
@@ -76,19 +96,33 @@ set createsuccess2=	 Press any key to go to main menu.
 set checksuccess=File check finished!
 ::ERRORS
 set errortitle=Oh Shit!
-set errorcheck=ERROR: Not enough resources
-set errorcheck1=Re-download SLauncher.exe
+set errorcheck=ERROR: Missed file: 
+set errorcheck1=Re-download CMLauncher.exe. If you get an error again, write to the creator.
 set errorngrok=ERROR: NgRok is not registered!
 set errorngrok1=Please enter your authtoken in the ngrok.yml
+set errorway=ERROR: The folder doesn't respond.
+set errorway1=Please change folder.
+set errorcore=ERROR: Server Core Doesn't Respond.
+set errorcore1=Please, change name of server core.
 ::DEFAULT
+set prerelease=				  WARNING!!!
+set prerelease1=		You're using Pre-Release!!!
+set prerelease2=	   In this version will be allowed new
+set prerelease3=	fuctions for next version, but he can working wrongly!!!!!!
+set prerelease4=     
+set prereleaseaccess=If you are sure that you want to use it then press any key...
+set currectfold=Created folder:
+set createserv_forge=Moving libraries...
+set servtype=Server-core type:
+set batfile1=Thank you for using CMLauncher!
+set createbat_msg=If you want create bat server-starter?
+set createbat_msg1=If yes select memory limit
+set createbat_msg2=If no just press enter.
+set servercoremsg=Select currect server-core
 set serverstopped1=Click to close the program
 set serverstopped=SERVER STOPPED!!!
 set serverstarting=Server starts up in one minute
-set errorcore=ERROR: Server Core Doesn't Respond.
-set errorcore1=Please, change name of server core.
 set namecore=Name of server core (without .jar)
-set errorway=ERROR: The folder doesn't respond.
-set errorway1=Please change folder.
 set limitsetmsg1=Before starting, please specify the memory
 set limitsetmsg2=limit (Required MB): 
 set memorylimit=Memory Limit:
@@ -119,7 +153,7 @@ set ngrokreg2=Ngrok Authtoken:
 set ngrokregcheck=Checking register...
 set ngrokmsg_port=Enter the port of your server or world: 
 set mainmenu_select=Enter command: 
-set mainmenu_title=Welcome to SLauncher.
+set mainmenu_title=Welcome to CMLauncher.
 set mainmenu_info=With this launcher you can create
 set mainmenu_info1=a server or run it without bothering!
 set mainmenu_create=Create server.
@@ -129,118 +163,252 @@ set mainmenu_info=Check changes.
 set mainmenu_ngrok=Start NgRok.
 set mainmenu_cmd_info=Check changes.
 set create_msg=You have chosen to create a new server.
+set lang=en
 goto check
 
 
 ::Сам скрипт для батника (если так можно назвать)
 :check
+cls
+if exist ifPreRelease.cms (
+title WARNING!!! / ПРЕДУПРЕЖДЕНИЕ!!!
+echo %prerelease%
+echo %prerelease1%
+echo %prerelease2%
+echo %prerelease3%
+if %lang%== ru (
+echo %prerelease4%
+)
+echo %prereleaseaccess%
+pause >nul)
+set servercoremsg1=Spigot, Magma, CraftBukkit, Thermos
 title Check modules...
 set way=Не указан
-if exist resources\versions\1.16.1.jar (
-echo %checkmsg% [ОК]
+if exist resources\versions\Spigot\1.16.1.jar (
+echo %checkmsg% resources\versions\Spigot\1.16.1.jar [ОК]
 ) ELSE (
 color 4F
-echo %checkmsg% [FAIL]
+echo %checkmsg% resources\versions\Spigot\1.16.1.jar [FAIL]
 title %errortitle%
-echo %errorcheck%
+echo %errorcheck% resources\versions\Spigot\1.16.1.jar
 echo %errorcheck1%
 pause >nul
+start https://www.github.com/ZuVEnO/CMLauncher/Release
 exit)
-if exist resources\versions\1.15.jar (
-echo %checkmsg% [ОК]
+if exist resources\versions\Spigot\1.15.jar (
+echo %checkmsg% resources\versions\Spigot\1.15.jar [ОК]
 ) ELSE (
 color 4F
-echo %checkmsg% [FAIL]
+echo %checkmsg% resources\versions\Spigot\1.15.jar [FAIL]
 title %errortitle%
-echo %errorcheck%
+echo %errorcheck% resources\versions\Spigot\1.15.jar
 echo %errorcheck1%
 pause >nul
+start https://www.github.com/ZuVEnO/CMLauncher/Release
 exit)
-if exist resources\versions\1.14.jar (
-echo %checkmsg% [ОК]
+if exist resources\versions\Spigot\1.14.jar (
+echo %checkmsg% resources\versions\Spigot\1.14.jar [ОК]
 ) ELSE (
-echo %checkmsg% [FAIL]
+echo %checkmsg% resources\versions\Spigot\1.14.jar [FAIL]
 color 4F
 title %errortitle%
-echo %errorcheck%
+echo %errorcheck% resources\versions\Spigot\1.14.jar
 echo %errorcheck1%
 pause >nul
+start https://www.github.com/ZuVEnO/CMLauncher/Release
 exit)
-if exist resources\versions\1.13.jar (
-echo %checkmsg% [ОК]
+if exist resources\versions\Spigot\1.13.jar (
+echo %checkmsg% resources\versions\Spigot\1.13.jar [ОК]
 ) ELSE (
 color 4F
-echo %checkmsg% [FAIL]
+echo %checkmsg% resources\versions\Spigot\1.13.jar [FAIL]
 title %errortitle%
-echo %errorcheck%
+echo %errorcheck% esources\versions\Spigot\1.13.jar
 echo %errorcheck1%
 pause >nul
+start https://www.github.com/ZuVEnO/CMLauncher/Release
 exit)
-if exist resources\versions\1.12.jar (
-echo %checkmsg% [ОК]
+if exist resources\versions\Spigot\1.12.jar (
+echo %checkmsg% resources\versions\Spigot\1.12.jar [ОК]
 ) ELSE (
 color 4F
-echo %checkmsg% [FAIL]
+echo %checkmsg% resources\versions\Spigot\1.12.jar [FAIL]
 title %errortitle%
-echo %errorcheck%
+echo %errorcheck% resources\versions\Spigot\1.12.jar
 echo %errorcheck1%
 pause >nul
+start https://www.github.com/ZuVEnO/CMLauncher/Release
 exit)
-if exist resources\versions\1.11.jar (
-echo %checkmsg% [ОК]
+if exist resources\versions\Spigot\1.11.jar (
+echo %checkmsg% resources\versions\Spigot\1.11.jar [ОК]
 ) ELSE (
 color 4F
-echo %checkmsg% [FAIL]
+echo %checkmsg% resources\versions\Spigot\1.11.jar [FAIL]
 title %errortitle%
-echo %errorcheck%
+echo %errorcheck% resources\versions\Spigot\1.11.jar
 echo %errorcheck1%
 pause >nul
+start https://www.github.com/ZuVEnO/CMLauncher/Release
 exit)
-if exist resources\versions\1.9.2.jar (
-echo %checkmsg% [ОК]
+if exist resources\versions\Spigot\1.9.2.jar (
+echo %checkmsg% resources\versions\Spigot\1.9.2.jar [ОК]
 ) ELSE (
 color 4F
-echo %checkmsg% [FAIL]
+echo %checkmsg% resources\versions\Spigot\1.9.2.jar [FAIL]
 title %errortitle%
-echo %errorcheck%
+echo %errorcheck% resources\versions\Spigot\1.9.2.jar
 echo %errorcheck1%
 pause >nul
+start https://www.github.com/ZuVEnO/CMLauncher/Release
 exit)
-if exist resources\versions\1.9.jar (
-echo %checkmsg% [ОК]
+if exist resources\versions\Spigot\1.9.jar (
+echo %checkmsg% resources\versions\Spigot\1.9.jar [ОК]
 ) ELSE (
 color 4F
-echo %checkmsg% [FAIL]
+echo %checkmsg% resources\versions\Spigot\1.9.jar [FAIL]
 title %errortitle%
-echo %errorcheck%
+echo %errorcheck% resources\versions\Spigot\1.9.jar
 echo %errorcheck1%
 pause >nul
+start https://www.github.com/ZuVEnO/CMLauncher/Release
 exit)
-if exist resources\versions\1.8.9.jar (
-echo %checkmsg% [ОК]
+if exist resources\versions\Spigot\1.8.9.jar (
+echo %checkmsg% resources\versions\Spigot\1.8.9.jar [ОК]
 ) ELSE (
 color 4F
-echo %checkmsg% [FAIL]
+echo %checkmsg% resources\versions\Spigot\1.8.9.jar [FAIL]
 title %errortitle%
-echo %errorcheck%
+echo %errorcheck% resources\versions\Spigot\1.8.9.jar
 echo %errorcheck1%
 pause >nul
+start https://www.github.com/ZuVEnO/CMLauncher/Release
 exit)
-if exist resources\versions\1.8.1.jar (
-echo %checkmsg% [ОК]
+if exist resources\versions\Spigot\1.8.1.jar (
+echo %checkmsg% resources\versions\Spigot\1.8.1.jar [ОК]
 ) ELSE (
 color 4F
-echo %checkmsg% [FAIL]
+echo %checkmsg% resources\versions\Spigot\1.8.1.jar [FAIL]
+title %errortitle%
+echo %errorcheck% resources\versions\Spigot\1.8.1.jar
+echo %errorcheck1%
+pause >nul
+start https://www.github.com/ZuVEnO/CMLauncher/Release
+exit)
+if exist resources\versions\CraftBukkit\1.16.1.jar (
+echo %checkmsg% resources\versions\CraftBukkit\1.16.1.jar [ОК]
+) ELSE (
+color 4F
+echo %checkmsg% resources\versions\CraftBukkit\1.16.1.jar [FAIL]
+title %errortitle%
+echo %errorcheck% resources\versions\CraftBukkit\1.16.1.jar
+echo %errorcheck1%
+pause >nul
+start https://www.github.com/ZuVEnO/CMLauncher/Release
+exit)
+if exist resources\versions\CraftBukkit\1.15.jar (
+echo %checkmsg% resources\versions\CraftBukkit\1.15.jar [ОК]
+) ELSE (
+color 4F
+echo %checkmsg% resources\versions\CraftBukkit\1.15.jar [FAIL]
+title %errortitle%
+echo %errorcheck% resources\versions\CraftBukkit\1.15.jar
+echo %errorcheck1%
+pause >nul
+start https://www.github.com/ZuVEnO/CMLauncher/Release
+exit)
+if exist resources\versions\CraftBukkit\1.14.jar (
+echo %checkmsg% resources\versions\CraftBukkit\1.14.jar [ОК]
+) ELSE (
+echo %checkmsg% resources\versions\CraftBukkit\1.14.jar [FAIL]
+color 4F
 title %errortitle%
 echo %errorcheck%
 echo %errorcheck1%
 pause >nul
+start https://www.github.com/ZuVEnO/CMLauncher/Release
+exit)
+if exist resources\versions\CraftBukkit\1.13.jar (
+echo %checkmsg% resources\versions\CraftBukkit\1.13.jar [ОК]
+) ELSE (
+color 4F
+echo %checkmsg% resources\versions\CraftBukkit\1.13.jar [FAIL]
+title %errortitle%
+echo %errorcheck% resources\versions\CraftBukkit\1.13.jar
+echo %errorcheck1%
+pause >nul
+start https://www.github.com/ZuVEnO/CMLauncher/Release
+exit)
+if exist resources\versions\CraftBukkit\1.12.jar (
+echo %checkmsg% resources\versions\CraftBukkit\1.12.jar [ОК]
+) ELSE (
+color 4F
+echo %checkmsg% resources\versions\CraftBukkit\1.12.jar [FAIL]
+title %errortitle%
+echo %errorcheck% resources\versions\CraftBukkit\1.12.jar
+echo %errorcheck1%
+pause >nul
+start https://www.github.com/ZuVEnO/CMLauncher/Release
+exit)
+if exist resources\versions\CraftBukkit\1.11.jar (
+echo %checkmsg% resources\versions\CraftBukkit\1.11.jar [ОК]
+) ELSE (
+color 4F
+echo %checkmsg% resources\versions\CraftBukkit\1.11.jar [FAIL]
+title %errortitle%
+echo %errorcheck% resources\versions\CraftBukkit\1.11.jar
+echo %errorcheck1%
+pause >nul
+start https://www.github.com/ZuVEnO/CMLauncher/Release
+exit)
+if exist resources\versions\CraftBukkit\1.9.2.jar (
+echo %checkmsg% resources\versions\CraftBukkit\1.9.2.jar [ОК]
+) ELSE (
+color 4F
+echo %checkmsg% resources\versions\CraftBukkit\1.9.2.jar [FAIL]
+title %errortitle%
+echo %errorcheck% resources\versions\CraftBukkit\1.9.2.jar
+echo %errorcheck1%
+pause >nul
+start https://www.github.com/ZuVEnO/CMLauncher/Release
+exit)
+if exist resources\versions\CraftBukkit\1.9.jar (
+echo %checkmsg% resources\versions\CraftBukkit\1.9.jar [ОК]
+) ELSE (
+color 4F
+echo %checkmsg% resources\versions\CraftBukkit\1.9.jar [FAIL]
+title %errortitle%
+echo %errorcheck% resources\versions\CraftBukkit\1.9.jar
+echo %errorcheck1%
+pause >nul
+start https://www.github.com/ZuVEnO/CMLauncher/Release
+exit)
+if exist resources\versions\Thermos\1.7.10.jar (
+echo %checkmsg% resources\versions\Thermos\1.7.10.jar [ОК]
+) ELSE (
+color 4F
+echo %checkmsg% resources\versions\Thermos\1.7.10.jar [FAIL]
+title %errortitle%
+echo %errorcheck% resources\versions\Thermos\1.7.10.jar
+echo %errorcheck1%
+pause >nul
+start https://www.github.com/ZuVEnO/CMLauncher/Release
+exit)
+if exist resources\versions\Magma\1.12.2.jar (
+echo %checkmsg% resources\versions\Magma\1.12.2.jar [ОК]
+) ELSE (
+color 4F
+echo %checkmsg% resources\versions\Magma\1.12.2.jar [FAIL]
+title %errortitle%
+echo %errorcheck% resources\versions\Magma\1.12.2.jar
+echo %errorcheck1%
+pause >nul
+start https://www.github.com/ZuVEnO/CMLauncher/Release
 exit)
 color a
 echo %checksuccess%
 timeout /t 1 >nul
 :start
-title SLauncher - By ZuVEnO 1.1
+title CMLauncher - By ZuVEnO %currectver%
 set limit=0
 color 0F
 cls
@@ -249,27 +417,28 @@ echo.
 echo.
 echo %mainmenu_info%
 echo %mainmenu_info1%
-echo create - %mainmenu_create%
-echo start - %mainmenu_start%
-echo ngrok - %mainmenu_ngrok%
-echo info - %mainmenu_cmd_info%
-echo donate - %mainmenu_donate%
+echo [1] - %mainmenu_create%
+echo [2] - %mainmenu_start%
+echo [3] - %mainmenu_ngrok%
+echo [4] - %mainmenu_cmd_info%
+echo [5] - %mainmenu_donate%
 set /p start= %mainmenu_select%
-if %start%== create GOTO new
-if %start%== start GOTO select
-if %start%== ngrok GOTO ngrokcheck
-if %start%== info GOTO info
-if %start%== donate start https://qiwi.com/n/ZUVENO
+if %start%== 1 GOTO new
+if %start%== 2 GOTO select
+if %start%== 3 GOTO ngrokcheck
+if %start%== 4 GOTO info
+if %start%== 5 start https://qiwi.com/n/ZUVENO
 goto start
 :info
 cls
-echo Информация о батнике:
-echo Версия - 1.1
+echo Информация:
+echo Версия - %currectver%
 echo.
 echo Изменения:
-echo 1 - Добавлена поддержка модуля ngrok
-echo 2 - Была установлена проверка модуля,
-echo изменения ресурсов и на наличие сервера.
+echo 1 - Добавлен лог для проверки при
+echo отсутствии какого-то файла.
+echo 2 - Добавлена поддержка остальных ядр:
+echo Magma, Thermos, CraftBukkit
 echo.
 echo.
 echo Поддержите позязя хоть копеечкой :(
@@ -278,13 +447,14 @@ echo Нажмите на любую клавишу, чтобы вернуться в
 echo 				главное меню.
 echo.
 echo.
-echo Information about the batch file:
-echo Version - 1.1
+echo Information:
+echo Version - %currectver%
 echo.
 echo Changes:
-echo 1 - Added support for the ngrok module
-echo 2 - A module check was installed,
-echo resource changes and server availability.
+echo 1 - Added log for scanning resources
+echo if this resource hasn't.
+echo 2 - Added support another server cores:
+echo Magma, Thermos, CraftBukkit
 echo.
 echo.
 echo Support the call at least a pretty penny :(
@@ -316,7 +486,7 @@ ngrok tcp %ngrokport%
 cd ..
 goto start
 :new
-title SLauncher - By ZuVEnO 1.0 MODE: Create server
+title CMLauncher - By ZuVEnO %currectver% MODE: Create server
 cls
 echo %create_msg%
 echo.
@@ -324,11 +494,38 @@ echo %create_msg1%
 %russianletters%
 set /p dir=- 
 if %dir%==main GOTO start
-goto new2
-:new2
+goto servcore
+:servcore
 cls
 echo %settings%
 echo %foldername% %dir%
+echo %everymsg%
+echo %everymsg1%
+echo %servercoremsg%
+echo %servercoremsg1%
+set /p servercoretype=:-
+if %servercoretype%== Bukkit (
+set servercoretype=CraftBukkit
+goto newbukkit)
+if %servercoretype%== CraftBukkit (
+set servercoretype=CraftBukkit
+goto newbukkit)
+if %servercoretype%== Spigot (
+set servercoretype=Spigot
+goto new2)
+if %servercoretype%== Thermos (
+set servercoretype=Thermos
+set ver=1.7.10
+goto createbat)
+if %servercoretype%== Magma (
+set servercoretype=Magma
+set ver=1.12.2
+goto createbat)
+goto servcore
+:new2
+cls
+echo %settings%
+echo %foldername% %dir% %servtype% %servercoretype%
 echo %everymsg%
 echo %everymsg1%
 echo.
@@ -352,16 +549,47 @@ if %ver%== 1.14 GOTO callcore
 if %ver%== 1.15 GOTO callcore
 if %ver%== 1.16.1 GOTO callcore
 goto new2
+:newbukkit
+cls
+echo %settings%
+echo %foldername% %dir% %servtype% %servercoretype%
+echo %everymsg%
+echo %everymsg1%
+echo.
+echo %versionsavil%
+echo 	1.9  	1.9.2
+echo 	1.11	1.12
+echo 	1.13	1.14
+echo 	1.15	1.16.1
+set /p ver=%versionsel%
+if %ver%== main GOTO start
+if %ver%== back GOTO new
+if %ver%== 1.9 GOTO callcore
+if %ver%== 1.9.2 GOTO callcore
+if %ver%== 1.11 GOTO callcore
+if %ver%== 1.12 GOTO callcore
+if %ver%== 1.13 GOTO callcore
+if %ver%== 1.14 GOTO callcore
+if %ver%== 1.15 GOTO callcore
+if %ver%== 1.16.1 GOTO callcore
+goto newbukkit
 :callcore
 echo %settings%
-echo %foldername%%dir% %selectedver% %ver%
+echo %foldername%%dir% %servtype% %servercoretype% %selectedver% %ver%
 echo %everymsg%
 echo %everymsg1%
 echo.
 echo %create_callcore_msg%
 %russianletters%
 set /p callcore=- 
-goto create
+goto createbat
+:createbat
+echo %settings%
+echo %foldername%
+echo %createbat_msg%
+echo %createbat_msg1%
+echo %createbat_msg2%
+set /p batlimit=- 
 :create
 cls
 title Creating...
@@ -373,10 +601,31 @@ if exist "%userprofile%\Рабочий стол" set newservfolder=%userprofile%\Рабочий ст
 if exist "%userprofile%\OneDrive\Рабочий стол" set newservfolder=%userprofile%\OneDrive\Рабочий стол
 md "%newservfolder%\ServerProjects\%dir%\"
 md "%newservfolder%\ServerProjects\%dir%\plugins\"
+if %createbatlimit%== none GOTO CREATESTEP2
+if %createbatlimit%== skip GOTO CREATESTEP2
+echo %createbat%
+@echo @echo off>"%newservfolder%\ServerProjects\%dir%\start.bat"
+@echo echo %batfile1%>>"%newservfolder%\ServerProjects\%dir%\start.bat"
+@echo java -Xincgc -Xmx%batLimit%M -jar %callcore%.jar>>>"%newservfolder%\ServerProjects\%dir%\start.bat"
+:CREATESTEP2
 echo %createstep2%
-copy resources\versions\%ver%.jar "%newservfolder%\ServerProjects\%dir%\"
+copy resources\versions\%servercoretype%\%ver%.jar "%newservfolder%\ServerProjects\%dir%\"
 rename "%newservfolder%\ServerProjects\%dir%\%ver%.jar" "%callcore%.jar"
+if %servercoretype%== Magma (
+echo %createserv_forge%
+md "%newservfolder%\ServerProjects\%dir%\libraries\"
+copy resources\libraries\1.12.2\* "%newservfolder%\ServerProjects\%dir%\libraries\")
+if %servercoretype%== Thermos (
+echo %createserv_forge%
+md "%newservfolder%\ServerProjects\%dir%\libraries\"
+copy resources\libraries\1.7.10\* "%newservfolder%\ServerProjects\%dir%\libraries\")
 echo %createstep3%
+md "%newservfolder%\ServerProjects\%dir%\plugins\Essentials\"
+md "%newservfolder%\ServerProjects\%dir%\plugins\AutoMessage\"
+copy resources\configs\Essentials\%lang%.yml "%newservfolder%\ServerProjects\%dir%\plugins\Essentials\"
+copy resources\configs\AutoMessage\%lang%.yml "%newservfolder%\ServerProjects\%dir%\plugins\AutoMessage\"
+rename "%newservfolder%\ServerProjects\%dir%\plugins\AutoMessage\%lang%.yml" config.yml
+rename "%newservfolder%\ServerProjects\%dir%\plugins\Essentials\%lang%.yml" config.yml
 copy resources\eula.txt "%newservfolder%\ServerProjects\%dir%\"
 copy resources\plugins\* "%newservfolder%\ServerProjects\%dir%\plugins\"
 copy resources\server.properties "%newservfolder%\ServerProjects\%dir%\"
@@ -390,35 +639,31 @@ pause >nul
 goto start
 :select
 cls
-title SLauncher - By ZuVEnO 1.1 MODE: Select server
+title CMLauncher - By ZuVEnO %currectver% MODE: Select server
 echo %start_msg%
 echo %everymsg%
-echo %limitsetmsg%
 echo %limitsetmsg1%
 set /p limit=%limitsetmsg2%
+if exist "%userprofile%\Desktop" CD %userprofile%\Desktop
+if exist "%userprofile%\Рабочий стол" CD %userprofile%\Рабочий стол
+if exist "%userprofile%\OneDrive\Desktop" CD %userprofile%\OneDrive\Desktop
+if exist "%userprofile%\OneDrive\Рабочий стол" CD %userprofile%\OneDrive\Рабочий стол
 goto way
 :way
-title SLauncher - By ZuVEnO 1.1 MODE: Select server
+title CMLauncher - By ZuVEnO %currectver% MODE: Select server
 cls
 color 0F
 echo %settings%
 echo %memorylimit% %limit%M
 echo %everymsg%
 echo %everymsg1%
-echo %waydesktop%
+echo %currectfold%
 cd
 echo %waynext%
 set /p way=%start_way%
 if %way%== back GOTO select
 if %way%== main GOTO START
 if %way%== next GOTO servera
-If %way%== desktop (
-if exist "%userprofile%\Рабочий стол" CD %userprofile%\Рабочий стол
-if exist "%userprofile%\Desktop" CD %userprofile%\Desktop
-if exist "%userprofile%\OneDrive\Рабочий стол" CD %userprofile%\OneDrive\Рабочий стол
-if exist "%userprofile%\OneDrive\Desktop" CD %userprofile%\OneDrive\Desktop
-set way=%desktop%
-goto way)
 if exist "%way%" (
 cd %way%
 goto way)
@@ -426,11 +671,11 @@ cls
 color 4F
 title %errortitle%
 echo %errorway%
-echo 
+echo %errorway1%
 pause >nul
 goto way
 :servera
-title SLauncher - By ZuVEnO 1.1 MODE: Select server
+title CMLauncher - By ZuVEnO %currectver% MODE: Select server
 cls
 color 0F
 echo %settings%
@@ -452,12 +697,12 @@ goto servera
 :servstart
 cls
 echo %serverstarting%
-title SLauncher - Server Started
+title CMLauncher - Server Started
 java -Xincgc -Xmx%Limit%M -jar "%core%.jar"
 color 4F
 echo.
 echo 		%serverstopped%
 echo  %serverstopped1%
-title SLauncher - Server Stopped!!!
+title CMLauncher - Server Stopped!!!
 pause >nul
-exit
+goto way

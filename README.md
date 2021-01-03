@@ -25,8 +25,8 @@ Everything is very simple!
 There are 3 commands inside:
 Create, start and ngrok.
 
-** Create ** - creates a new server following your instructions.
-** Start ** - Starts the server of your choice.
-** Ngrok ** - This program will give access to connect your friends to the server.
+**Create** - creates a new server following your instructions.
+**Start** - Starts the server of your choice.
+**Ngrok** - This program will give access to connect your friends to the server.
 
 You can download the code and in releases.
