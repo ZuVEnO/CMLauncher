@@ -1,5 +1,7 @@
 ﻿using System;
+using System.ComponentModel;
 using System.IO;
+using System.Net;
 using System.Threading;
 
 namespace CMLauncher
@@ -9,10 +11,10 @@ namespace CMLauncher
         static void Main(string[] args)
         {
             //Установка всяких таких херней
+            WebClient web = new WebClient();
             String creator = "ZuVEnO"; //Автор проги
             String ver = "1.2"; //Версия проги
             String status = "Pre"; //Статусник версии
-
 
             //Предупреждение о эксперименте
             Console.Clear();
@@ -25,7 +27,7 @@ namespace CMLauncher
             // Загрузка... 1000 ms - 1 секунда
             for (int i = 0; i < 100; i++)
             {
-                int time = 100;
+                int time = 50;
                 Thread.Sleep(time);
                 Console.Write("|");
                 if (i == 9)
@@ -109,6 +111,7 @@ namespace CMLauncher
                             Create();
                         if (consoleKey == ConsoleKey.Q | consoleKey == ConsoleKey.Escape)
                         {
+                            Console.ForegroundColor = ConsoleColor.White;
                             Console.Clear();
                             return;
                         }
@@ -118,22 +121,71 @@ namespace CMLauncher
             }
 
             void Create() {
+                // 1 Стадия: Название папки сервера
                 Console.Clear();
-                Console.Title = "CMLauncher " + status + "-" + ver + " | Создание сервера";
+                Console.Title = "CMLauncher " + status + "-" + ver + " | Создание сервера 1/3";
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.Write("CMLauncher ");
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.Write(" | ");
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.Write("Создание сервера");
+                Console.Write("Создание сервера 1/3");
                 Console.WriteLine();
+                Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine("Все сервера создаются в папке на Рабочем Столе.");
-                Console.WriteLine("Укажите название проекта: ");
+                Console.WriteLine("Укажите название вашего сервера: ");
                 String folderName = Console.ReadLine();
-                Directory.CreateDirectory(path: "%userprofile%/Desktop/ServerProjets/" + folderName);
-                Console.WriteLine("Check desktop");
-                Console.ReadKey(true);
+                // 1 Стадия: Название папки сервера
+                Console.Clear();
+                Console.Title = "CMLauncher " + status + "-" + ver + " | Создание сервера 2/3";
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.Write("CMLauncher ");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.Write(" | ");
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.Write("Создание сервера 2/3");
+                Console.WriteLine();
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("Здесь показан список версии CraftBukkit:");
+                Console.WriteLine("1.16.5 | 1.16.4 | 1.16.3 | 1.16.2 | 1.16.1");
+                Console.WriteLine("1.15.2 | 1.15.1 | 1.15 | 1.14.4 | 1.14.3");
+                Console.WriteLine("1.14.2 | 1.14.1 | 1.14 | 1.13.2 | 1.13.1");
+                Console.WriteLine("1.13 | 1.12.2 | 1.12.1 | 1.12 | 1.11.2");
+                Console.WriteLine("1.11.1 | 1.11 | 1.10.2 | 1.10.1 | 1.10");
+                Console.WriteLine("1.9.4 | 1.9.2 | 1.9 | 1.8.8 | 1.8.7 | 1.8.6");
+                Console.WriteLine("1.8.5| 1.8.4 | 1.8.3 | 1.8.2 | 1.8.1 | 1.8");
+                Console.WriteLine("");
+                Console.WriteLine("Укажите версию");
+                String version = Console.ReadLine();
+                if(version.Equals("1.16.5") | version.Equals("1.16.4") | version.Equals("1.16.3"))
+                StartCreate();
+
+                void StartCreate()
+                {
+                    Console.Clear();
+                    Console.WriteLine("Создание папки...");
+                    Directory.CreateDirectory(path: "C:/Users/" + Environment.UserName + "/Desktop/Server Projets/" + folderName);
+                    Console.WriteLine("Скачивание ядра с хостинга... Потребуется время...");
+                    web.DownloadFileCompleted += new System.ComponentModel.AsyncCompletedEventHandler(Completed);
+                    if()
+                    web.DownloadFileAsync(new Uri("https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.16.5.jar"), "C:/Users/" + Environment.UserName + "/Desktop/Server Projets/" + folderName + "/" + "craftbukkit-1.16.5.jar");
+                    Console.ReadKey(true);
+                }
             }
+
+            void Completed(Object sender, AsyncCompletedEventArgs e)
+            {
+                if(e.Error != null)
+                {
+                    Console.WriteLine("Ошибка при скачивании: " + e.Error.Message);
+                }
+                else
+                {
+                    Console.WriteLine("Ядро скачано");
+                    Console.ReadKey(true);
+                }
+            }
+
         }
     }
 }
