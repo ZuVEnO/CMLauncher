@@ -181,6 +181,7 @@ namespace CMLauncher
                     void StartCreate()
                     {
                         Console.Clear();
+                        int load = 0;
                         Console.Title = "CMLauncher " + status + "-" + ver + " | Создание сервера...";
                         Console.WriteLine("Создание папки...");
                         Directory.CreateDirectory(path: "C:/Users/" + Environment.UserName + "/Desktop/Server Projets/" + folderName);
@@ -188,7 +189,15 @@ namespace CMLauncher
                         web.DownloadFileCompleted += new System.ComponentModel.AsyncCompletedEventHandler(Completed);
                         web.DownloadProgressChanged += new DownloadProgressChangedEventHandler(Progress);
                         web.DownloadFileAsync(new Uri("https://cdn.getbukkit.org/craftbukkit/craftbukkit-" + version + ".jar"), "C:/Users/" + Environment.UserName + "/Desktop/Server Projets/" + folderName + "/" + "craftbukkit-1.16.5.jar");
-                        Console.ReadKey(true);
+                        Cycle();
+                        void Cycle()
+                        {
+                            if (!load.Equals(100))
+                            {
+                                StackOverflowException
+                            }
+                            next2();
+                        }
                         void next2() {
                             Console.WriteLine("Приписываем параметры и подтверждаем eula.txt...");
                             var eula = new StreamWriter("C:/Users/" + Environment.UserName + "/Desktop/Server Projets/" + folderName + "/" + "eula.txt");
@@ -212,12 +221,6 @@ namespace CMLauncher
                                 Console.ReadKey(true);
                                 return;
                             }
-                            else
-                            {
-                                Console.WriteLine("Ядро скачано");
-                                Thread.Sleep(100);
-                                next2();
-                            }
                         }
 
                         void Progress(Object sender, DownloadProgressChangedEventArgs e)
@@ -227,6 +230,7 @@ namespace CMLauncher
                             {
                                 Console.Title = "CMLauncher " + status + "-" + ver + " | Создание сервера...";
                                 Console.WriteLine("Ядро скачано");
+                                load=100;
                                 Thread.Sleep(100);
                                 next2();
                             }
