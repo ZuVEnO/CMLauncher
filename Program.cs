@@ -12,6 +12,7 @@ namespace CMLauncher
         {
             //Установка всяких таких херней
             WebClient web = new WebClient();
+            WebClient serverSys = new WebClient();
             String creator = "ZuVEnO"; //Автор проги
             String ver = "1.2"; //Версия проги
             String status = "Pre"; //Статусник версии
@@ -119,7 +120,8 @@ namespace CMLauncher
                 }
             }
 
-            void Create() {
+            void Create()
+            {
                 // 1 Стадия: Название папки сервера
                 Console.Clear();
                 Console.Title = "CMLauncher " + status + "-" + ver + " | Создание сервера 1/3";
@@ -134,7 +136,18 @@ namespace CMLauncher
                 Console.WriteLine("Все сервера создаются в папке на Рабочем Столе.");
                 Console.WriteLine("Укажите название вашего сервера: ");
                 String folderName = Console.ReadLine();
-                SelectVer();
+                if(!Directory.Exists(folderName))
+                {
+                    SelectVer();
+                }
+                else
+                {
+                    Console.Clear();
+                    Console.WriteLine("ERROR: Папка присутствует!");
+                    Console.WriteLine("Удалите или измените название папки");
+                    Console.ReadKey(true);
+                    Create();
+                }
                 // 1 Стадия: Название папки сервера
                 void SelectVer()
                 {
@@ -150,12 +163,13 @@ namespace CMLauncher
                     Console.ForegroundColor = ConsoleColor.White;
                     Console.WriteLine("Здесь показан список версии CraftBukkit:");
                     Console.WriteLine("1.16.5 | 1.16.4 | 1.16.3 | 1.16.2 | 1.16.1");
-                    Console.WriteLine("1.15.2 | 1.15.1 | 1.15 | 1.14.4 | 1.14.3");
-                    Console.WriteLine("1.14.2 | 1.14.1 | 1.14 | 1.13.2 | 1.13.1");
-                    Console.WriteLine("1.13 | 1.12.2 | 1.12.1 | 1.12 | 1.11.2");
-                    Console.WriteLine("1.11.1 | 1.11 | 1.10.2 | 1.10.1 | 1.10");
-                    Console.WriteLine("1.9.4 | 1.9.2 | 1.9 | 1.8.8 | 1.8.7 | 1.8.6");
-                    Console.WriteLine("1.8.5| 1.8.4 | 1.8.3 | 1.8.2 | 1.8.1 | 1.8");
+                    Console.WriteLine("1.15.2 | 1.15.1 | 1.15   | 1.14.4 | 1.14.3");
+                    Console.WriteLine("1.14.2 | 1.14.1 | 1.14   | 1.13.2 | 1.13.1");
+                    Console.WriteLine("1.13   | 1.12.2 | 1.12.1 | 1.12   | 1.11.2");
+                    Console.WriteLine("1.11.1 |  1.11  | 1.10.2 | 1.10.1 | 1.10");
+                    Console.WriteLine("1.9.4  | 1.9.2  | 1.9    | 1.8.8  | 1.8.7");
+                    Console.WriteLine("1.8.6  | 1.8.5  | 1.8.4  | 1.8.3  | 1.8.2");
+                    Console.WriteLine("1.8.1  | 1.8    |        |        |");
                     Console.WriteLine("");
                     Console.WriteLine("Укажите версию");
                     String version = Console.ReadLine();
@@ -180,58 +194,56 @@ namespace CMLauncher
 
                     void StartCreate()
                     {
+                        Random rnd = new Random();
+                        String TEMPdir = Path.GetTempPath();
+                        string Desktop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                        String fileCore = Desktop + "/Server Projets/" + folderName + "server.jar";
+                        int rndTempDir = rnd.Next();
                         Console.Clear();
-                        int load = 0;
                         Console.Title = "CMLauncher " + status + "-" + ver + " | Создание сервера...";
                         Console.WriteLine("Создание папки...");
-                        Directory.CreateDirectory(path: "C:/Users/" + Environment.UserName + "/Desktop/Server Projets/" + folderName);
+                        Directory.CreateDirectory(path: Desktop + "/Server Projets/" + folderName);
+                        Directory.CreateDirectory(path: TEMPdir + "CML_$" + rndTempDir + "core");
                         Console.WriteLine("Скачивание ядра с хостинга... Потребуется время...");
-                        web.DownloadFileCompleted += new System.ComponentModel.AsyncCompletedEventHandler(Completed);
+                        web.DownloadFileCompleted += new AsyncCompletedEventHandler(Completed);
                         web.DownloadProgressChanged += new DownloadProgressChangedEventHandler(Progress);
-                        web.DownloadFileAsync(new Uri("https://cdn.getbukkit.org/craftbukkit/craftbukkit-" + version + ".jar"), "C:/Users/" + Environment.UserName + "/Desktop/Server Projets/" + folderName + "/" + "craftbukkit-1.16.5.jar");
-                        Cycle();
-                        void Cycle()
+                        web.DownloadFileAsync(new Uri("https://cdn.getbukkit.org/craftbukkit/craftbukkit-" + version + ".jar"), TEMPdir + "CML_$" + rndTempDir + "core/" + "server.jar");
+                        do
                         {
-                            if (!load.Equals(100))
-                            {
-                                StackOverflowException
-                            }
-                            next2();
-                        }
-                        void next2() {
+                            Thread.Sleep(1000);
+                        } while (!File.Exists(fileCore));
+                        void next2()
+                        {
+                            File.Delete(TEMPdir + "CML_$" + rndTempDir + "core" + "/server.jar");
+                            Directory.Delete(TEMPdir + "CML_$" + rndTempDir + "core");
                             Console.WriteLine("Приписываем параметры и подтверждаем eula.txt...");
-                            var eula = new StreamWriter("C:/Users/" + Environment.UserName + "/Desktop/Server Projets/" + folderName + "/" + "eula.txt");
-                            eula.Write("eula=true");
-                            var serprop = new StreamWriter("C:/Users/" + Environment.UserName + "/Desktop/Server Projets/" + folderName + "/" + "server.properties");
-                            serprop.WriteLine("online-mode=false");
-                            serprop.WriteLine("motd=\u00a7aThanks for using CML ;)");
+                            serverSys.DownloadFileAsync(new Uri(""), "");
+                            serverSys.DownloadFileAsync(new Uri(""), "");
                             Console.WriteLine("Сервер создан!");
                             Console.WriteLine("Нажмите на любую кнопку, чтобы выйти");
                             Console.ReadKey(true);
                             return;
                         }
-                        
+
 
                         void Completed(Object sender, AsyncCompletedEventArgs e)
                         {
                             if (e.Error != null)
                             {
                                 Console.WriteLine("Ошибка при скачивании: " + e.Error.Message);
-                                Console.WriteLine("Создание отменено. Нажмите на любую кнопку, чтобы выйти");
+                                Console.WriteLine("Создание отменено. Закройте приложение");
                                 Console.ReadKey(true);
-                                return;
                             }
                         }
 
                         void Progress(Object sender, DownloadProgressChangedEventArgs e)
                         {
                             Console.Title = "CMLauncher скачивание: " + e.BytesReceived + " " + e.ProgressPercentage + "%";
-                            if(e.ProgressPercentage.Equals("100"))
+                            if (e.ProgressPercentage.Equals(100))
                             {
                                 Console.Title = "CMLauncher " + status + "-" + ver + " | Создание сервера...";
                                 Console.WriteLine("Ядро скачано");
-                                load=100;
-                                Thread.Sleep(100);
+                                File.Copy(TEMPdir + "CML_$" + rndTempDir + "core" + "/server.jar", Desktop + "/Server Projets/" + folderName + "/server.jar");
                                 next2();
                             }
                         }
