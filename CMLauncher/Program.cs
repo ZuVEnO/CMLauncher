@@ -69,7 +69,7 @@ namespace CMLauncher
                     {
 
                         Console.Title = "CMLauncher " + status + "-" + ver + " | Установлен язык: RU";
-                        Console.SetWindowSize(95, 20);
+                        Console.SetWindowSize(95, 22);
                         Console.Clear();
                         Console.WriteLine("Добро пожаловать!");
                         Console.Write("Спасибо, что вы скачали");
@@ -81,17 +81,23 @@ namespace CMLauncher
                             Console.WriteLine("");
                             Console.WriteLine("У вас установлена версия Pre-Release!!!");
                             Console.WriteLine("Возможны баги и недоработки.");
+                            Console.ForegroundColor = ConsoleColor.White;
+                            Console.Write("Цвета каталогов: ");
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.Write("Недоступен");
+                            Console.ForegroundColor = ConsoleColor.White;
+                            Console.Write(" | ");
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            Console.WriteLine("Дорабатывается");
                         }
                         Console.ForegroundColor = ConsoleColor.White;
                         Console.WriteLine("");
                         Console.WriteLine("Выберите каталог:");
+                        Console.ForegroundColor = ConsoleColor.Yellow;
                         Console.WriteLine("1 - Создать сервер");
-                        Console.WriteLine("2 - Запустить сервер");
-                        Console.Write("3 - ");
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Console.Write("Запустить NgRok");
-                        Console.ForegroundColor = ConsoleColor.White;
-                        Console.WriteLine("");
+                        Console.WriteLine("2 - Запустить сервер");
+                        Console.WriteLine("3 - Запустить NgRok");
                         Console.WriteLine("4 - Информация");
                         for (int nl = 0; nl < 10; nl++)
                             Console.WriteLine("");
@@ -136,21 +142,18 @@ namespace CMLauncher
                 Console.WriteLine("Все сервера создаются в папке на Рабочем Столе.");
                 Console.WriteLine("Укажите название вашего сервера: ");
                 String folderName = Console.ReadLine();
-                if(!Directory.Exists(folderName))
-                {
-                    SelectVer();
-                }
-                else
-                {
-                    Console.Clear();
-                    Console.WriteLine("ERROR: Папка присутствует!");
-                    Console.WriteLine("Удалите или измените название папки");
-                    Console.ReadKey(true);
-                    Create();
-                }
-                // 1 Стадия: Название папки сервера
+                SelectVer();
+                // 2 Стадия: Выбор веисии и проверка на существование папки с таким названием
                 void SelectVer()
                 {
+                    if (Directory.Exists(folderName))
+                    {
+                        Console.Clear();
+                        Console.WriteLine("ERROR: Папка присутствует!");
+                        Console.WriteLine("Удалите или измените название папки");
+                        Console.ReadKey(true);
+                        return;
+                    }
                     Console.Clear();
                     Console.Title = "CMLauncher " + status + "-" + ver + " | Создание сервера 2/3";
                     Console.ForegroundColor = ConsoleColor.Yellow;
@@ -217,12 +220,16 @@ namespace CMLauncher
                             File.Delete(TEMPdir + "CML_$" + rndTempDir + "core" + "/server.jar");
                             Directory.Delete(TEMPdir + "CML_$" + rndTempDir + "core");
                             Console.WriteLine("Приписываем параметры и подтверждаем eula.txt...");
-                            serverSys.DownloadFileAsync(new Uri(""), "");
-                            serverSys.DownloadFileAsync(new Uri(""), "");
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("ERROR: Отсутствуют исходники");
+                            Console.WriteLine("Вам придётся самостоятельно отключить online-mode");
+                            Console.WriteLine("и создать bat файл. Для bat-файла скопируйте эту строку:");
+                            Console.ForegroundColor = ConsoleColor.White;
+                            Console.WriteLine("java -jar server.jar");
                             Console.WriteLine("Сервер создан!");
                             Console.WriteLine("Нажмите на любую кнопку, чтобы выйти");
                             Console.ReadKey(true);
-                            return;
+                            MainMenu();
                         }
 
 
