@@ -128,6 +128,10 @@ namespace CMLauncher
 
             void Create()
             {
+                Random rnd = new Random();
+                String TEMPdir = Path.GetTempPath();
+                string Desktop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                int rndTempDir = rnd.Next();
                 // 1 Стадия: Название папки сервера
                 Console.Clear();
                 Console.Title = "CMLauncher " + status + "-" + ver + " | Создание сервера 1/3";
@@ -146,13 +150,10 @@ namespace CMLauncher
                 // 2 Стадия: Выбор веисии и проверка на существование папки с таким названием
                 void SelectVer()
                 {
-                    if (Directory.Exists(folderName))
+                    String fileCore = Desktop + "/Server Projets/" + folderName + "server.jar";
+                    if (File.Exists(fileCore))
                     {
-                        Console.Clear();
-                        Console.WriteLine("ERROR: Папка присутствует!");
-                        Console.WriteLine("Удалите или измените название папки");
-                        Console.ReadKey(true);
-                        return;
+                        Create();
                     }
                     Console.Clear();
                     Console.Title = "CMLauncher " + status + "-" + ver + " | Создание сервера 2/3";
@@ -197,11 +198,6 @@ namespace CMLauncher
 
                     void StartCreate()
                     {
-                        Random rnd = new Random();
-                        String TEMPdir = Path.GetTempPath();
-                        string Desktop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-                        String fileCore = Desktop + "/Server Projets/" + folderName + "server.jar";
-                        int rndTempDir = rnd.Next();
                         Console.Clear();
                         Console.Title = "CMLauncher " + status + "-" + ver + " | Создание сервера...";
                         Console.WriteLine("Создание папки...");
@@ -213,7 +209,7 @@ namespace CMLauncher
                         web.DownloadFileAsync(new Uri("https://cdn.getbukkit.org/craftbukkit/craftbukkit-" + version + ".jar"), TEMPdir + "CML_$" + rndTempDir + "core/" + "server.jar");
                         do
                         {
-                            Thread.Sleep(1000);
+                            Thread.Sleep(1);
                         } while (!File.Exists(fileCore));
                         void next2()
                         {
@@ -238,7 +234,8 @@ namespace CMLauncher
                             if (e.Error != null)
                             {
                                 Console.WriteLine("Ошибка при скачивании: " + e.Error.Message);
-                                Console.WriteLine("Создание отменено. Закройте приложение");
+                                Console.WriteLine("Создание отменено. Закройте приложение или повторте попытку");
+                                Console.WriteLine("Если ошибка повторяется отправьте на базу Github в разделе Issues");
                                 Console.ReadKey(true);
                             }
                         }
