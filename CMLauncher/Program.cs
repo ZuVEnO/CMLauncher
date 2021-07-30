@@ -13,7 +13,6 @@ namespace CMLauncher
             //Установка всяких таких херней
             WebClient web = new WebClient();
             WebClient serverSys = new WebClient();
-            String creator = "ZuVEnO"; //Автор проги
             String ver = "1.2"; //Версия проги
             String status = "Pre"; //Статусник версии
 
@@ -33,28 +32,12 @@ namespace CMLauncher
                 Console.Write("|");
                 if (i == 9)
                 {
-                    _ = 50;
                     Thread.Sleep(1000);
-                }
-                if (i == 14)
-                {
-                    _ = 10;
                 }
                 if (i == 67)
                 {
                     Thread.Sleep(2000);
-                    if (!creator.Contains("ZuVEnO"))
-                    {
-                        Console.Clear();
-                        Console.Title = "Ля ты крыса ааа!";
-                        Console.WriteLine("Я зафиксировал изменение кода сука!");
-                        Console.WriteLine("Как ты посмел!");
-                        Console.ReadKey();
-                    }
-                    _ = 1000;
                 }
-                if (i == 70)
-                    _ = 100;
                 if (i == 99)
                     Thread.Sleep(2000);
             }
