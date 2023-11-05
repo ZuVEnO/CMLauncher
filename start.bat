@@ -2,8 +2,8 @@
 set createbatlimit=none
 :lang
 title Select lang.
-echo Select lang \ Выберите язык
-echo [1] - Русский
+echo Select lang \ тАЪ├л┬б┬е├а┬и├в┬е ├п┬з├л┬к
+echo [1] - ┬Р├г├б├б┬к┬и┬й
 echo [2] - English
 set /p lang=- 
 if %lang%== 1 goto langru
@@ -12,65 +12,65 @@ goto lang
 
 
 :langru
-:: ПРОШЛО
-set ngrokregsuccess=NgRok зарегистрирован!
-set createsuccess=Сервер создан!
-set createsuccess1=Проверьте свой рабочий стол.
-set createsuccess2=Нажмите любую клавишу, чтобы перейти в главное меню.
-set checksuccess=Проверка файла завершена!
-:: ОШИБКИ
-set errortitle=Ааа! Ошибка STOP-000000000000
-set errorcheck=ERROR: недостаточно ресурсов
-set errorcheck1=Пожалуйста, скачайте ещё раз CMLauncher.exe
-::ПО УМОЛЧАНИЮ
-set createserv_forge=Перемещаем ядро сервера...
-set servtype=Тип ядра:
-set batfile1=Спасибо, что используете CMLauncher!
-set serverstopped1=Нажмите, чтобы закрыть.
-set serverstopped=СЕРВЕР ОСТАНОВЛЕН!!!
-set serverstarting=Сервер запустится через минту...
-set errorcore=ERROR: Данного ядра нет!
-set errorcore1=Пожалуйста измените название ядра.
-set namecore=Название ядра (без .jar)
-set errorway=ERROR: Данной папки нет!
-set errorway1=Пожалуйста смените путь к серверу.
-set memorylimit=Ограничение памяти:
-set russianletters=echo (Русские буквы не работают!!!)
-set start_msg=Вы выбрали запуск сервера.
-set start_way=Укажите путь к ядру сервера (БЕЗ ПРОБЕЛОВ!!!): 
-set create_callcore_msg=Как бы вы хотели назвать ядро сервера?
-set createstep1=Создание папки...
-set createstep2=Перемещение ядра сервера...
-set createstep3=Добавление необходимых дополнений...
-set settings=Атрибуты:
-set versionsavil=Доступные версии: 
-set versionsel=Выбрать версию minecraft для сервера: 
-set имя папки=Имя папки:
-set create_msg1=Как называется ваша папка?
-set desktop=Рабочий стол
-set waydesktop=Если сервер на рабочем столе - desktop
-set everymsg=Вы хотите вернуться в главное меню - main
-set everymsg1=Вы хотите отредактировать - back
-set selectedver=Версия:
-set checkmsg=Проверка...
-set ngrok_msg=Вы выбрали NgRok.
-set ngrok_msg1=Вы можете поделиться IP Minecraft после tcp://[ВАШ IP]
-set ngrokreg=NgRok не зарегистрирован!
-set ngrokreg1=Пожалуйста, перейдите на ngrok.com, зарегистрируйтесь, скопируйте authtoken и вставьте в строку.
-set ngrokreg2=Ngrok токен: 
-set ngrokregcheck=Проверка регистрации...
-set ngrokmsg_port=Введите порт вашего сервера или мира:
-set mainmenu_select=Введите команду: 
-set mainmenu_title=Добро пожаловать в CMLauncher.
-set mainmenu_info=С помощью этой пусковой установки вы можете создавать
-set mainmenu_info1=сервер или запустите его, не заморачиваясь!
-set mainmenu_create=Создать сервер.
-set mainmenu_start=Запустить сервер.
-set mainmenu_donate=Пожертвовать на дошик.
-set foldername=Название папки:
-set mainmenu_cmd_info=Проверить изменения.
-set mainmenu_ngrok=Запустить NgRok.
-set create_msg=Вы выбрали создание нового сервера.
+:: ┬П┬Р┼╜╦ЬтА╣┼╜
+set ngrokregsuccess=NgRok ┬з┬а├а┬е┬г┬и├б├в├а┬и├а┬о┬в┬а┬н!
+set createsuccess=тАШ┬е├а┬в┬е├а ├б┬о┬з┬д┬а┬н!
+set createsuccess1=┬П├а┬о┬в┬е├а├м├в┬е ├б┬в┬о┬й ├а┬а┬б┬о├з┬и┬й ├б├в┬о┬л.
+set createsuccess2=┬Н┬а┬ж┬м┬и├в┬е ┬л├о┬б├г├о ┬к┬л┬а┬в┬и├и├г, ├з├в┬о┬б├л ┬п┬е├а┬е┬й├в┬и ┬в ┬г┬л┬а┬в┬н┬о┬е ┬м┬е┬н├о.
+set checksuccess=┬П├а┬о┬в┬е├а┬к┬а ├д┬а┬й┬л┬а ┬з┬а┬в┬е├а├и┬е┬н┬а!
+:: ┼╜╦Ь╦Ж┬Б┼а╦Ж
+set errortitle=тВм┬а┬а! ┼╜├и┬и┬б┬к┬а STOP-000000000000
+set errorcheck=ERROR: ┬н┬е┬д┬о├б├в┬а├в┬о├з┬н┬о ├а┬е├б├г├а├б┬о┬в
+set errorcheck1=┬П┬о┬ж┬а┬л├г┬й├б├в┬а, ├б┬к┬а├з┬а┬й├в┬е ┬е├й├▒ ├а┬а┬з CMLauncher.exe
+::┬П┼╜ тАЬ┼Т┼╜тА╣тАФтВм┬Н╦Ж┼╛
+set createserv_forge=┬П┬е├а┬е┬м┬е├й┬а┬е┬м ├п┬д├а┬о ├б┬е├а┬в┬е├а┬а...
+set servtype=тАЩ┬и┬п ├п┬д├а┬а:
+set batfile1=тАШ┬п┬а├б┬и┬б┬о, ├з├в┬о ┬и├б┬п┬о┬л├м┬з├г┬е├в┬е CMLauncher!
+set serverstopped1=┬Н┬а┬ж┬м┬и├в┬е, ├з├в┬о┬б├л ┬з┬а┬к├а├л├в├м.
+set serverstopped=тАШтАж┬РтАЪтАж┬Р ┼╜тАШтАЩтВм┬Н┼╜тАЪтА╣тАж┬Н!!!
+set serverstarting=тАШ┬е├а┬в┬е├а ┬з┬а┬п├г├б├в┬и├в├б├п ├з┬е├а┬е┬з ┬м┬и┬н├в├г...
+set errorcore=ERROR: тАЮ┬а┬н┬н┬о┬г┬о ├п┬д├а┬а ┬н┬е├в!
+set errorcore1=┬П┬о┬ж┬а┬л├г┬й├б├в┬а ┬и┬з┬м┬е┬н┬и├в┬е ┬н┬а┬з┬в┬а┬н┬и┬е ├п┬д├а┬а.
+set namecore=┬Н┬а┬з┬в┬а┬н┬и┬е ├п┬д├а┬а (┬б┬е┬з .jar)
+set errorway=ERROR: тАЮ┬а┬н┬н┬о┬й ┬п┬а┬п┬к┬и ┬н┬е├в!
+set errorway1=┬П┬о┬ж┬а┬л├г┬й├б├в┬а ├б┬м┬е┬н┬и├в┬е ┬п├г├в├м ┬к ├б┬е├а┬в┬е├а├г.
+set memorylimit=┼╜┬г├а┬а┬н┬и├з┬е┬н┬и┬е ┬п┬а┬м├п├в┬и:
+set russianletters=echo (┬Р├г├б├б┬к┬и┬е ┬б├г┬к┬в├л ┬н┬е ├а┬а┬б┬о├в┬а├о├в!!!)
+set start_msg=тАЪ├л ┬в├л┬б├а┬а┬л┬и ┬з┬а┬п├г├б┬к ├б┬е├а┬в┬е├а┬а.
+set start_way=тАЬ┬к┬а┬ж┬и├в┬е ┬п├г├в├м ┬к ├п┬д├а├г ├б┬е├а┬в┬е├а┬а (┬БтАжтАб ┬П┬Р┼╜┬БтАжтА╣┼╜тАЪ!!!): 
+set create_callcore_msg=┼а┬а┬к ┬б├л ┬в├л ├е┬о├в┬е┬л┬и ┬н┬а┬з┬в┬а├в├м ├п┬д├а┬о ├б┬е├а┬в┬е├а┬а?
+set createstep1=тАШ┬о┬з┬д┬а┬н┬и┬е ┬п┬а┬п┬к┬и...
+set createstep2=┬П┬е├а┬е┬м┬е├й┬е┬н┬и┬е ├п┬д├а┬а ├б┬е├а┬в┬е├а┬а...
+set createstep3=тАЮ┬о┬б┬а┬в┬л┬е┬н┬и┬е ┬н┬е┬о┬б├е┬о┬д┬и┬м├л├е ┬д┬о┬п┬о┬л┬н┬е┬н┬и┬й...
+set settings=тВм├в├а┬и┬б├г├в├л:
+set versionsavil=тАЮ┬о├б├в├г┬п┬н├л┬е ┬в┬е├а├б┬и┬и: 
+set versionsel=тАЪ├л┬б├а┬а├в├м ┬в┬е├а├б┬и├о minecraft ┬д┬л├п ├б┬е├а┬в┬е├а┬а: 
+set ┬и┬м├п ┬п┬а┬п┬к┬и=╦Ж┬м├п ┬п┬а┬п┬к┬и:
+set create_msg1=┼а┬а┬к ┬н┬а┬з├л┬в┬а┬е├в├б├п ┬в┬а├и┬а ┬п┬а┬п┬к┬а?
+set desktop=┬Р┬а┬б┬о├з┬и┬й ├б├в┬о┬л
+set waydesktop=тАж├б┬л┬и ├б┬е├а┬в┬е├а ┬н┬а ├а┬а┬б┬о├з┬е┬м ├б├в┬о┬л┬е - desktop
+set everymsg=тАЪ├л ├е┬о├в┬и├в┬е ┬в┬е├а┬н├г├в├м├б├п ┬в ┬г┬л┬а┬в┬н┬о┬е ┬м┬е┬н├о - main
+set everymsg1=тАЪ├л ├е┬о├в┬и├в┬е ┬о├в├а┬е┬д┬а┬к├в┬и├а┬о┬в┬а├в├м - back
+set selectedver=тАЪ┬е├а├б┬и├п:
+set checkmsg=┬П├а┬о┬в┬е├а┬к┬а...
+set ngrok_msg=тАЪ├л ┬в├л┬б├а┬а┬л┬и NgRok.
+set ngrok_msg1=тАЪ├л ┬м┬о┬ж┬е├в┬е ┬п┬о┬д┬е┬л┬и├в├м├б├п IP Minecraft ┬п┬о├б┬л┬е tcp://[тАЪтВм╦Ь IP]
+set ngrokreg=NgRok ┬н┬е ┬з┬а├а┬е┬г┬и├б├в├а┬и├а┬о┬в┬а┬н!
+set ngrokreg1=┬П┬о┬ж┬а┬л├г┬й├б├в┬а, ┬п┬е├а┬е┬й┬д┬и├в┬е ┬н┬а ngrok.com, ┬з┬а├а┬е┬г┬и├б├в├а┬и├а├г┬й├в┬е├б├м, ├б┬к┬о┬п┬и├а├г┬й├в┬е authtoken ┬и ┬в├б├в┬а┬в├м├в┬е ┬в ├б├в├а┬о┬к├г.
+set ngrokreg2=Ngrok ├в┬о┬к┬е┬н: 
+set ngrokregcheck=┬П├а┬о┬в┬е├а┬к┬а ├а┬е┬г┬и├б├в├а┬а├ж┬и┬и...
+set ngrokmsg_port=тАЪ┬в┬е┬д┬и├в┬е ┬п┬о├а├в ┬в┬а├и┬е┬г┬о ├б┬е├а┬в┬е├а┬а ┬и┬л┬и ┬м┬и├а┬а:
+set mainmenu_select=тАЪ┬в┬е┬д┬и├в┬е ┬к┬о┬м┬а┬н┬д├г: 
+set mainmenu_title=тАЮ┬о┬б├а┬о ┬п┬о┬ж┬а┬л┬о┬в┬а├в├м ┬в CMLauncher.
+set mainmenu_info=тАШ ┬п┬о┬м┬о├й├м├о ├н├в┬о┬й ┬п├г├б┬к┬о┬в┬о┬й ├г├б├в┬а┬н┬о┬в┬к┬и ┬в├л ┬м┬о┬ж┬е├в┬е ├б┬о┬з┬д┬а┬в┬а├в├м
+set mainmenu_info1=├б┬е├а┬в┬е├а ┬и┬л┬и ┬з┬а┬п├г├б├в┬и├в┬е ┬е┬г┬о, ┬н┬е ┬з┬а┬м┬о├а┬а├з┬и┬в┬а├п├б├м!
+set mainmenu_create=тАШ┬о┬з┬д┬а├в├м ├б┬е├а┬в┬е├а.
+set mainmenu_start=тАб┬а┬п├г├б├в┬и├в├м ├б┬е├а┬в┬е├а.
+set mainmenu_donate=┬П┬о┬ж┬е├а├в┬в┬о┬в┬а├в├м ┬н┬а ┬д┬о├и┬и┬к.
+set foldername=┬Н┬а┬з┬в┬а┬н┬и┬е ┬п┬а┬п┬к┬и:
+set mainmenu_cmd_info=┬П├а┬о┬в┬е├а┬и├в├м ┬и┬з┬м┬е┬н┬е┬н┬и├п.
+set mainmenu_ngrok=тАб┬а┬п├г├б├в┬и├в├м NgRok.
+set create_msg=тАЪ├л ┬в├л┬б├а┬а┬л┬и ├б┬о┬з┬д┬а┬н┬и┬е ┬н┬о┬в┬о┬г┬о ├б┬е├а┬в┬е├а┬а.
 set lang=ru
 goto check
 :langen
@@ -145,12 +145,12 @@ set lang=en
 goto check
 
 
-::Сам скрипт для батника (если так можно назвать)
+::тАШ┬а┬м ├б┬к├а┬и┬п├в ┬д┬л├п ┬б┬а├в┬н┬и┬к┬а (┬е├б┬л┬и ├в┬а┬к ┬м┬о┬ж┬н┬о ┬н┬а┬з┬в┬а├в├м)
 :check
 title Check modules...
-set way=Не указан
+set way=┬Н┬е ├г┬к┬а┬з┬а┬н
 if exist resources\versions\Spigot\1.16.1.jar (
-echo %checkmsg% resources\versions\Spigot\1.16.1.jar [ОК]
+echo %checkmsg% resources\versions\Spigot\1.16.1.jar [┼╜┼а]
 ) ELSE (
 color 4F
 echo %checkmsg% resources\versions\Spigot\1.16.1.jar [FAIL]
@@ -160,7 +160,7 @@ echo %errorcheck1%
 pause >nul
 exit)
 if exist resources\versions\Spigot\1.15.jar (
-echo %checkmsg% resources\versions\Spigot\1.15.jar [ОК]
+echo %checkmsg% resources\versions\Spigot\1.15.jar [┼╜┼а]
 ) ELSE (
 color 4F
 echo %checkmsg% resources\versions\Spigot\1.15.jar [FAIL]
@@ -170,7 +170,7 @@ echo %errorcheck1%
 pause >nul
 exit)
 if exist resources\versions\Spigot\1.14.jar (
-echo %checkmsg% resources\versions\Spigot\1.14.jar [ОК]
+echo %checkmsg% resources\versions\Spigot\1.14.jar [┼╜┼а]
 ) ELSE (
 echo %checkmsg% resources\versions\Spigot\1.14.jar [FAIL]
 color 4F
@@ -180,7 +180,7 @@ echo %errorcheck1%
 pause >nul
 exit)
 if exist resources\versions\Spigot\1.13.jar (
-echo %checkmsg% resources\versions\Spigot\1.13.jar [ОК]
+echo %checkmsg% resources\versions\Spigot\1.13.jar [┼╜┼а]
 ) ELSE (
 color 4F
 echo %checkmsg% resources\versions\Spigot\1.13.jar [FAIL]
@@ -190,7 +190,7 @@ echo %errorcheck1%
 pause >nul
 exit)
 if exist resources\versions\Spigot\1.12.jar (
-echo %checkmsg% resources\versions\Spigot\1.12.jar [ОК]
+echo %checkmsg% resources\versions\Spigot\1.12.jar [┼╜┼а]
 ) ELSE (
 color 4F
 echo %checkmsg% resources\versions\Spigot\1.12.jar [FAIL]
@@ -200,7 +200,7 @@ echo %errorcheck1%
 pause >nul
 exit)
 if exist resources\versions\Spigot\1.11.jar (
-echo %checkmsg% resources\versions\Spigot\1.11.jar [ОК]
+echo %checkmsg% resources\versions\Spigot\1.11.jar [┼╜┼а]
 ) ELSE (
 color 4F
 echo %checkmsg% resources\versions\Spigot\1.11.jar [FAIL]
@@ -210,7 +210,7 @@ echo %errorcheck1%
 pause >nul
 exit)
 if exist resources\versions\Spigot\1.9.2.jar (
-echo %checkmsg% resources\versions\Spigot\1.9.2.jar [ОК]
+echo %checkmsg% resources\versions\Spigot\1.9.2.jar [┼╜┼а]
 ) ELSE (
 color 4F
 echo %checkmsg% resources\versions\Spigot\1.9.2.jar [FAIL]
@@ -220,7 +220,7 @@ echo %errorcheck1%
 pause >nul
 exit)
 if exist resources\versions\Spigot\1.9.jar (
-echo %checkmsg% resources\versions\Spigot\1.9.jar [ОК]
+echo %checkmsg% resources\versions\Spigot\1.9.jar [┼╜┼а]
 ) ELSE (
 color 4F
 echo %checkmsg% resources\versions\Spigot\1.9.jar [FAIL]
@@ -230,7 +230,7 @@ echo %errorcheck1%
 pause >nul
 exit)
 if exist resources\versions\Spigot\1.8.9.jar (
-echo %checkmsg% resources\versions\Spigot\1.8.9.jar [ОК]
+echo %checkmsg% resources\versions\Spigot\1.8.9.jar [┼╜┼а]
 ) ELSE (
 color 4F
 echo %checkmsg% [FAIL]
@@ -240,7 +240,7 @@ echo %errorcheck1%
 pause >nul
 exit)
 if exist resources\versions\Spigot\1.8.1.jar (
-echo %checkmsg% resources\versions\Spigot\1.8.1.jar [ОК]
+echo %checkmsg% resources\versions\Spigot\1.8.1.jar [┼╜┼а]
 ) ELSE (
 color 4F
 echo %checkmsg% resources\versions\Spigot\1.8.1.jar [FAIL]
@@ -250,7 +250,7 @@ echo %errorcheck1%
 pause >nul
 exit)
 if exist resources\versions\CraftBukkit\1.16.1.jar (
-echo %checkmsg% resources\versions\CraftBukkit\1.16.1.jar [ОК]
+echo %checkmsg% resources\versions\CraftBukkit\1.16.1.jar [┼╜┼а]
 ) ELSE (
 color 4F
 echo %checkmsg% resources\versions\CraftBukkit\1.16.1.jar [FAIL]
@@ -260,7 +260,7 @@ echo %errorcheck1%
 pause >nul
 exit)
 if exist resources\versions\CraftBukkit\1.15.jar (
-echo %checkmsg% resources\versions\CraftBukkit\1.15.jar [ОК]
+echo %checkmsg% resources\versions\CraftBukkit\1.15.jar [┼╜┼а]
 ) ELSE (
 color 4F
 echo %checkmsg% resources\versions\CraftBukkit\1.15.jar [FAIL]
@@ -270,7 +270,7 @@ echo %errorcheck1%
 pause >nul
 exit)
 if exist resources\versions\CraftBukkit\1.14.jar (
-echo %checkmsg% resources\versions\CraftBukkit\1.14.jar [ОК]
+echo %checkmsg% resources\versions\CraftBukkit\1.14.jar [┼╜┼а]
 ) ELSE (
 echo %checkmsg% resources\versions\CraftBukkit\1.14.jar [FAIL]
 color 4F
@@ -280,7 +280,7 @@ echo %errorcheck1%
 pause >nul
 exit)
 if exist resources\versions\CraftBukkit\1.13.jar (
-echo %checkmsg% resources\versions\CraftBukkit\1.13.jar [ОК]
+echo %checkmsg% resources\versions\CraftBukkit\1.13.jar [┼╜┼а]
 ) ELSE (
 color 4F
 echo %checkmsg% resources\versions\CraftBukkit\1.13.jar [FAIL]
@@ -290,7 +290,7 @@ echo %errorcheck1%
 pause >nul
 exit)
 if exist resources\versions\CraftBukkit\1.12.jar (
-echo %checkmsg% resources\versions\CraftBukkit\1.12.jar [ОК]
+echo %checkmsg% resources\versions\CraftBukkit\1.12.jar [┼╜┼а]
 ) ELSE (
 color 4F
 echo %checkmsg% resources\versions\CraftBukkit\1.12.jar [FAIL]
@@ -300,7 +300,7 @@ echo %errorcheck1%
 pause >nul
 exit)
 if exist resources\versions\CraftBukkit\1.11.jar (
-echo %checkmsg% resources\versions\CraftBukkit\1.11.jar [ОК]
+echo %checkmsg% resources\versions\CraftBukkit\1.11.jar [┼╜┼а]
 ) ELSE (
 color 4F
 echo %checkmsg% resources\versions\CraftBukkit\1.11.jar [FAIL]
@@ -310,7 +310,7 @@ echo %errorcheck1%
 pause >nul
 exit)
 if exist resources\versions\CraftBukkit\1.9.2.jar (
-echo %checkmsg% resources\versions\CraftBukkit\1.9.2.jar [ОК]
+echo %checkmsg% resources\versions\CraftBukkit\1.9.2.jar [┼╜┼а]
 ) ELSE (
 color 4F
 echo %checkmsg% resources\versions\CraftBukkit\1.9.2.jar [FAIL]
@@ -320,7 +320,7 @@ echo %errorcheck1%
 pause >nul
 exit)
 if exist resources\versions\CraftBukkit\1.9.jar (
-echo %checkmsg% resources\versions\CraftBukkit\1.9.jar [ОК]
+echo %checkmsg% resources\versions\CraftBukkit\1.9.jar [┼╜┼а]
 ) ELSE (
 color 4F
 echo %checkmsg% resources\versions\CraftBukkit\1.9.jar [FAIL]
@@ -330,7 +330,7 @@ echo %errorcheck1%
 pause >nul
 exit)
 if exist resources\versions\Thermos\1.7.10.jar (
-echo %checkmsg% resources\versions\Thermos\1.7.10.jar [ОК]
+echo %checkmsg% resources\versions\Thermos\1.7.10.jar [┼╜┼а]
 ) ELSE (
 color 4F
 echo %checkmsg% resources\versions\Thermos\1.7.10.jar [FAIL]
@@ -340,7 +340,7 @@ echo %errorcheck1%
 pause >nul
 exit)
 if exist resources\versions\Thermos\1.7.10.jar (
-echo %checkmsg% resources\versions\Magma\1.12.2.jar [ОК]
+echo %checkmsg% resources\versions\Magma\1.12.2.jar [┼╜┼а]
 ) ELSE (
 color 4F
 echo %checkmsg% resources\versions\Magma\1.12.2.jar [FAIL]
@@ -372,24 +372,23 @@ if %start%== create GOTO new
 if %start%== start GOTO select
 if %start%== ngrok GOTO ngrokcheck
 if %start%== info GOTO info
-if %start%== donate start https://qiwi.com/n/ZUVENO
 goto start
 :info
 cls
-echo Информация:
-echo Версия - 1.2
+echo ╦Ж┬н├д┬о├а┬м┬а├ж┬и├п:
+echo тАЪ┬е├а├б┬и├п - 1.2
 echo.
-echo Изменения:
-echo 1 - Добавлен лог для проверки при
-echo отсутствии какого-то файла.
-echo 2 - Добавлена поддержка остальных ядр:
+echo ╦Ж┬з┬м┬е┬н┬е┬н┬и├п:
+echo 1 - тАЮ┬о┬б┬а┬в┬л┬е┬н ┬л┬о┬г ┬д┬л├п ┬п├а┬о┬в┬е├а┬к┬и ┬п├а┬и
+echo ┬о├в├б├г├в├б├в┬в┬и┬и ┬к┬а┬к┬о┬г┬о-├в┬о ├д┬а┬й┬л┬а.
+echo 2 - тАЮ┬о┬б┬а┬в┬л┬е┬н┬а ┬п┬о┬д┬д┬е├а┬ж┬к┬а ┬о├б├в┬а┬л├м┬н├л├е ├п┬д├а:
 echo Magma, Thermos, CraftBukkit, Paper
 echo.
 echo.
-echo Поддержите позязя хоть копеечкой :(
-echo https://qiwi.com/n/ZUVENO
-echo Нажмите на любую клавишу, чтобы вернуться в
-echo 				главное меню.
+echo ┬П┬о┬д┬д┬е├а┬ж┬и├в┬е ┬п┬о┬з├п┬з├п ├е┬о├в├м ┬к┬о┬п┬е┬е├з┬к┬о┬й :(
+echo.
+echo ┬Н┬а┬ж┬м┬и├в┬е ┬н┬а ┬л├о┬б├г├о ┬к┬л┬а┬в┬и├и├г, ├з├в┬о┬б├л ┬в┬е├а┬н├г├в├м├б├п ┬в
+echo 				┬г┬л┬а┬в┬н┬о┬е ┬м┬е┬н├о.
 echo.
 echo.
 echo Information:
@@ -403,7 +402,7 @@ echo Magma, Thermos, CraftBukkit, Paper
 echo.
 echo.
 echo Support the call at least a pretty penny :(
-echo https://qiwi.com/n/ZUVENO
+echo.
 echo 		Press any key to return to
 echo 				main menu.
 pause >nul
@@ -542,8 +541,8 @@ color e
 echo %createstep1%
 if exist "%userprofile%\Desktop" set newservfolder=%userprofile%\Desktop
 if exist "%userprofile%\OneDrive\Desktop" set newservfolder=%userprofile%\OneDrive\Desktop
-if exist "%userprofile%\Рабочий стол" set newservfolder=%userprofile%\Рабочий стол
-if exist "%userprofile%\OneDrive\Рабочий стол" set newservfolder=%userprofile%\OneDrive\Рабочий стол
+if exist "%userprofile%\┬Р┬а┬б┬о├з┬и┬й ├б├в┬о┬л" set newservfolder=%userprofile%\┬Р┬а┬б┬о├з┬и┬й ├б├в┬о┬л
+if exist "%userprofile%\OneDrive\┬Р┬а┬б┬о├з┬и┬й ├б├в┬о┬л" set newservfolder=%userprofile%\OneDrive\┬Р┬а┬б┬о├з┬и┬й ├б├в┬о┬л
 md "%newservfolder%\ServerProjects\%dir%\"
 md "%newservfolder%\ServerProjects\%dir%\plugins\"
 if %createbatlimit%== none GOTO CREATESTEP2
@@ -607,9 +606,9 @@ if %way%== main GOTO START
 if %way%== next GOTO servera
 If %way%== desktop (
 if exist "%userprofile%\Desktop" CD %userprofile%\Desktop
-if exist "%userprofile%\Рабочий стол" CD %userprofile%\Рабочий стол
+if exist "%userprofile%\┬Р┬а┬б┬о├з┬и┬й ├б├в┬о┬л" CD %userprofile%\┬Р┬а┬б┬о├з┬и┬й ├б├в┬о┬л
 if exist "%userprofile%\OneDrive\Desktop" CD %userprofile%\OneDrive\Desktop
-if exist "%userprofile%\OneDrive\Рабочий стол" CD %userprofile%\OneDrive\Рабочий стол
+if exist "%userprofile%\OneDrive\┬Р┬а┬б┬о├з┬и┬й ├б├в┬о┬л" CD %userprofile%\OneDrive\┬Р┬а┬б┬о├з┬и┬й ├б├в┬о┬л
 set way=%desktop%
 goto way)
 if exist "%way%" (
